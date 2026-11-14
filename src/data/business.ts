@@ -1,6 +1,6 @@
 export const BUSINESS = {
   name: 'Kent Pest Control Service',
-  phone: '+1 (253) 523-3921',
+  phone: '(253) 523-3921',
   phoneLink: 'tel:+12535233921',
   phoneRaw: '+12535233921',
   address: '327 5th Ave S, Kent, WA 98032, United States',
