@@ -10,6 +10,7 @@ import {
   getService,
   getServiceArea,
   getServiceUrl,
+  getServiceAreaUrl,
 } from '@/data/business';
 import {
   buildBreadcrumbSchema,

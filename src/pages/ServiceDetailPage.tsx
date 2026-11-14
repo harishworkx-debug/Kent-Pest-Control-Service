@@ -174,17 +174,16 @@ export function ServiceDetailPage({ serviceSlug, navigate }: ServiceDetailPagePr
               const url = `/${service.slug}-${area.urlSlug}`;
               const isCurrent = area.slug === BUSINESS.primaryLocationSlug;
               return (
-                <button
-                  <a
+                <a
                   key={area.slug}
-                  onClick={() => navigate(url)}
                   href={url}
                   onClick={(e) => {
                     e.preventDefault();
                     navigate(url);
                   }}
-                  className={`card group flex items-center justify-between p-5 text-left ${isCurrent ? 'ring-2 ring-brand-500 bg-brand-50/20' : ''
-                    }`}
+                  className={`card group flex items-center justify-between p-5 text-left ${
+                    isCurrent ? 'ring-2 ring-brand-500 bg-brand-50/20' : ''
+                  }`}
                 >
                   <div>
                     <h3 className="text-base font-bold text-navy-700 group-hover:text-brand-500">
@@ -195,9 +194,8 @@ export function ServiceDetailPage({ serviceSlug, navigate }: ServiceDetailPagePr
                     </p>
                   </div>
                   <ArrowRight className="h-5 w-5 shrink-0 text-neutral-400 transition-all group-hover:translate-x-1 group-hover:text-aqua-600" />
-                </button>
                 </a>
-          );
+              );
             })}
         </div>
       </div>
@@ -213,10 +211,8 @@ export function ServiceDetailPage({ serviceSlug, navigate }: ServiceDetailPagePr
 
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {relatedServices.map((relService) => (
-              <button
-                <a
+              <a
                 key={relService.slug}
-                onClick={() => navigate(getServiceUrl(relService.slug))}
                 href={getServiceUrl(relService.slug)}
                 onClick={(e) => {
                   e.preventDefault();
