@@ -175,11 +175,16 @@ export function ServiceDetailPage({ serviceSlug, navigate }: ServiceDetailPagePr
               const isCurrent = area.slug === BUSINESS.primaryLocationSlug;
               return (
                 <button
+                  <a
                   key={area.slug}
                   onClick={() => navigate(url)}
-                  className={`card group flex items-center justify-between p-5 text-left ${
-                    isCurrent ? 'ring-2 ring-brand-500 bg-brand-50/20' : ''
-                  }`}
+                  href={url}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    navigate(url);
+                  }}
+                  className={`card group flex items-center justify-between p-5 text-left ${isCurrent ? 'ring-2 ring-brand-500 bg-brand-50/20' : ''
+                    }`}
                 >
                   <div>
                     <h3 className="text-base font-bold text-navy-700 group-hover:text-brand-500">
@@ -191,14 +196,15 @@ export function ServiceDetailPage({ serviceSlug, navigate }: ServiceDetailPagePr
                   </div>
                   <ArrowRight className="h-5 w-5 shrink-0 text-neutral-400 transition-all group-hover:translate-x-1 group-hover:text-aqua-600" />
                 </button>
-              );
+                </a>
+          );
             })}
-          </div>
         </div>
-      </section>
+      </div>
+    </section >
 
-      {/* Related Services */}
-      <section className="bg-white py-16 lg:py-20">
+      {/* Related Services */ }
+      < section className = "bg-white py-16 lg:py-20" >
         <div className="container-page">
           <div className="text-center">
             <span className="section-eyebrow">Related Services</span>
@@ -208,8 +214,14 @@ export function ServiceDetailPage({ serviceSlug, navigate }: ServiceDetailPagePr
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {relatedServices.map((relService) => (
               <button
+                <a
                 key={relService.slug}
                 onClick={() => navigate(getServiceUrl(relService.slug))}
+                href={getServiceUrl(relService.slug)}
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigate(getServiceUrl(relService.slug));
+                }}
                 className="card group p-6 text-left"
               >
                 <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-aqua-50">
@@ -221,11 +233,11 @@ export function ServiceDetailPage({ serviceSlug, navigate }: ServiceDetailPagePr
                 <p className="mt-2 text-xs leading-relaxed text-neutral-500 text-pretty">
                   {relService.description}
                 </p>
-              </button>
+              </a>
             ))}
           </div>
         </div>
-      </section>
+      </section >
 
       <FAQSection faqs={service.faqs} title={`${service.name} FAQs`} />
 

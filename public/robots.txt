@@ -1,5 +1,42 @@
+# robots.txt for Kent Pest Control Service
+# Website: https://www.kent-pestcontrol.com/
+
+# ------------------------------------------------------------------------------
+# Default permissions for all web crawlers
+# ------------------------------------------------------------------------------
 User-agent: *
 Allow: /
 Disallow: /404
 
+# Explicitly allow rendering resources for client-side SPA execution
+Allow: /assets/
+Allow: /*.js$
+Allow: /*.css$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.svg$
+Allow: /*.ico$
+Allow: /*.webp$
+Allow: /*.webmanifest$
+
+# ------------------------------------------------------------------------------
+# Googlebot & Bingbot (Explicit allowances for fast indexing)
+# ------------------------------------------------------------------------------
+User-agent: Googlebot
+Allow: /
+Disallow: /404
+
+User-agent: Googlebot-Image
+Allow: /
+Allow: /assets/
+
+User-agent: Bingbot
+Allow: /
+Disallow: /404
+
+# ------------------------------------------------------------------------------
+# Sitemap & Host Directives
+# ------------------------------------------------------------------------------
 Sitemap: https://www.kent-pestcontrol.com/sitemap.xml
+Host: https://www.kent-pestcontrol.com

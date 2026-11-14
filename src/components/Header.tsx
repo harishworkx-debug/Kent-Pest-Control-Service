@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Menu, X, Phone, ChevronDown } from 'lucide-react';
 import { Logo } from '@/components/Logo';
 import { CallButton } from '@/components/CallButton';
-import { BUSINESS, SERVICES, SERVICE_AREAS, getServiceUrl } from '@/data/business';
+import { BUSINESS, SERVICES, SERVICE_AREAS, getServiceUrl, getServiceAreaUrl } from '@/data/business';
 import { useRouter } from '@/hooks/useRouter';
 
 interface HeaderProps {
@@ -50,23 +50,38 @@ export function Header({ navigate, currentPath }: HeaderProps) {
       >
         <div className="container-page">
           <div className="flex h-16 items-center justify-between gap-4 lg:h-[72px]">
-            <button onClick={() => handleNav('/')} className="shrink-0">
+            <a
+              href="/"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNav('/');
+              }}
+              className="shrink-0"
+            >
               <Logo />
-            </button>
+            </a>
 
             <nav className="hidden items-center gap-7 lg:flex">
-              <button
-                onClick={() => handleNav('/')}
+              <a
+                href="/"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNav('/');
+                }}
                 className={`nav-link ${isActive('/') ? 'text-brand-500' : ''}`}
               >
                 Home
-              </button>
-              <button
-                onClick={() => handleNav('/about')}
+              </a>
+              <a
+                href="/about"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNav('/about');
+                }}
                 className={`nav-link ${isActive('/about') ? 'text-brand-500' : ''}`}
               >
                 About Us
-              </button>
+              </a>
 
               <div className="group relative">
                 <button className={`nav-link flex items-center gap-1 ${currentPath.startsWith('/services') || SERVICES.some(s => currentPath.includes(s.slug)) ? 'text-brand-500' : ''}`}>
@@ -75,59 +90,79 @@ export function Header({ navigate, currentPath }: HeaderProps) {
                 </button>
                 <div className="dropdown-panel">
                   <div className="grid gap-0.5">
-                    <button
-                      onClick={() => handleNav('/services')}
+                    <a
+                      href="/services"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleNav('/services');
+                      }}
                       className="rounded-lg px-3 py-2 text-left text-sm font-medium text-navy-600 transition-colors hover:bg-neutral-50 hover:text-brand-500"
                     >
                       All Services
-                    </button>
+                    </a>
                     <div className="my-1 h-px bg-neutral-100" />
                     {SERVICES.map((service) => (
-                      <button
+                      <a
                         key={service.slug}
-                        onClick={() => handleNav(getServiceUrl(service.slug))}
+                        href={getServiceUrl(service.slug)}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          handleNav(getServiceUrl(service.slug));
+                        }}
                         className="rounded-lg px-3 py-2 text-left text-sm text-neutral-600 transition-colors hover:bg-neutral-50 hover:text-brand-500"
                       >
                         {service.name}
-                      </button>
+                      </a>
                     ))}
                   </div>
                 </div>
               </div>
 
               <div className="group relative">
-                <button className={`nav-link flex items-center gap-1 ${currentPath.startsWith('/service-areas') ? 'text-brand-500' : ''}`}>
+                <button className={`nav-link flex items-center gap-1 ${currentPath.startsWith('/service-areas') || SERVICE_AREAS.some(a => currentPath === `/water-damage-${a.urlSlug}`) ? 'text-brand-500' : ''}`}>
                   Service Areas
                   <ChevronDown className="h-4 w-4" />
                 </button>
                 <div className="dropdown-panel">
                   <div className="grid gap-0.5">
-                    <button
-                      onClick={() => handleNav('/service-areas')}
+                    <a
+                      href="/service-areas"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleNav('/service-areas');
+                      }}
                       className="rounded-lg px-3 py-2 text-left text-sm font-medium text-navy-600 transition-colors hover:bg-neutral-50 hover:text-brand-500"
                     >
                       All Service Areas
-                    </button>
+                    </a>
                     <div className="my-1 h-px bg-neutral-100" />
                     {SERVICE_AREAS.map((area) => (
-                      <button
+                      <a
                         key={area.slug}
-                        onClick={() => handleNav(`/service-areas/${area.slug}`)}
+                        href={getServiceAreaUrl(area.slug)}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          handleNav(getServiceAreaUrl(area.slug));
+                        }}
                         className="rounded-lg px-3 py-2 text-left text-sm text-neutral-600 transition-colors hover:bg-neutral-50 hover:text-brand-500"
                       >
                         {area.name}
-                      </button>
+                      </a>
                     ))}
                   </div>
                 </div>
               </div>
 
-              <button
-                onClick={() => handleNav('/contact')}
+              <a
+                href="/contact"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNav('/contact');
+                }}
                 className={`nav-link ${isActive('/contact') ? 'text-brand-500' : ''}`}
               >
                 Contact
-              </button>
+              </a>
             </nav>
 
             <div className="hidden lg:block">
@@ -148,8 +183,8 @@ export function Header({ navigate, currentPath }: HeaderProps) {
           <div className="border-t border-neutral-100 bg-white lg:hidden">
             <div className="container-page max-h-[calc(100vh-4rem)] overflow-y-auto py-4">
               <div className="flex flex-col gap-1">
-                <MobileLink onClick={() => handleNav('/')} active={isActive('/')}>Home</MobileLink>
-                <MobileLink onClick={() => handleNav('/about')} active={isActive('/about')}>About Us</MobileLink>
+                <MobileLink href="/" onClick={() => handleNav('/')} active={isActive('/')}>Home</MobileLink>
+                <MobileLink href="/about" onClick={() => handleNav('/about')} active={isActive('/about')}>About Us</MobileLink>
 
                 <div className="py-1">
                   <button
@@ -161,9 +196,13 @@ export function Header({ navigate, currentPath }: HeaderProps) {
                   </button>
                   {servicesOpen && (
                     <div className="ml-3 mt-1 flex flex-col gap-0.5 border-l border-neutral-200 pl-3">
-                      <MobileSubLink onClick={() => handleNav('/services')}>All Services</MobileSubLink>
+                      <MobileSubLink href="/services" onClick={() => handleNav('/services')}>All Services</MobileSubLink>
                       {SERVICES.map((service) => (
-                        <MobileSubLink key={service.slug} onClick={() => handleNav(getServiceUrl(service.slug))}>
+                        <MobileSubLink
+                          key={service.slug}
+                          href={getServiceUrl(service.slug)}
+                          onClick={() => handleNav(getServiceUrl(service.slug))}
+                        >
                           {service.name}
                         </MobileSubLink>
                       ))}
@@ -181,9 +220,13 @@ export function Header({ navigate, currentPath }: HeaderProps) {
                   </button>
                   {areasOpen && (
                     <div className="ml-3 mt-1 flex flex-col gap-0.5 border-l border-neutral-200 pl-3">
-                      <MobileSubLink onClick={() => handleNav('/service-areas')}>All Service Areas</MobileSubLink>
+                      <MobileSubLink href="/service-areas" onClick={() => handleNav('/service-areas')}>All Service Areas</MobileSubLink>
                       {SERVICE_AREAS.map((area) => (
-                        <MobileSubLink key={area.slug} onClick={() => handleNav(`/service-areas/${area.slug}`)}>
+                        <MobileSubLink
+                          key={area.slug}
+                          href={getServiceAreaUrl(area.slug)}
+                          onClick={() => handleNav(getServiceAreaUrl(area.slug))}
+                        >
                           {area.name}
                         </MobileSubLink>
                       ))}
@@ -191,7 +234,7 @@ export function Header({ navigate, currentPath }: HeaderProps) {
                   )}
                 </div>
 
-                <MobileLink onClick={() => handleNav('/contact')} active={isActive('/contact')}>Contact</MobileLink>
+                <MobileLink href="/contact" onClick={() => handleNav('/contact')} active={isActive('/contact')}>Contact</MobileLink>
               </div>
 
               <div className="mt-4">
@@ -221,26 +264,52 @@ function MobileCallBar() {
   );
 }
 
-function MobileLink({ children, onClick, active }: { children: React.ReactNode; onClick: () => void; active: boolean }) {
+function MobileLink({
+  children,
+  onClick,
+  active,
+  href,
+}: {
+  children: React.ReactNode;
+  onClick: () => void;
+  active: boolean;
+  href?: string;
+}) {
   return (
-    <button
-      onClick={onClick}
+    <a
+      href={href || '#'}
+      onClick={(e) => {
+        e.preventDefault();
+        onClick();
+      }}
       className={`rounded-lg px-3 py-2.5 text-left text-base font-medium transition-colors ${
         active ? 'bg-brand-50 text-brand-500' : 'text-navy-700 hover:bg-neutral-50'
       }`}
     >
       {children}
-    </button>
+    </a>
   );
 }
 
-function MobileSubLink({ children, onClick }: { children: React.ReactNode; onClick: () => void }) {
+function MobileSubLink({
+  children,
+  onClick,
+  href,
+}: {
+  children: React.ReactNode;
+  onClick: () => void;
+  href?: string;
+}) {
   return (
-    <button
-      onClick={onClick}
+    <a
+      href={href || '#'}
+      onClick={(e) => {
+        e.preventDefault();
+        onClick();
+      }}
       className="rounded-lg px-3 py-2 text-left text-sm text-neutral-600 transition-colors hover:bg-neutral-50 hover:text-brand-500"
     >
       {children}
-    </button>
+    </a>
   );
 }

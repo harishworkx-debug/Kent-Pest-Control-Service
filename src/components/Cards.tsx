@@ -1,5 +1,5 @@
 import { Phone, ArrowRight, MapPin } from 'lucide-react';
-import { BUSINESS, SERVICES, SERVICE_AREAS, getServiceUrl } from '@/data/business';
+import { BUSINESS, SERVICES, SERVICE_AREAS, getServiceUrl, getServiceAreaUrl } from '@/data/business';
 import type { ServiceInfo, ServiceAreaInfo } from '@/data/business';
 
 interface ServiceCardProps {
@@ -8,10 +8,15 @@ interface ServiceCardProps {
 }
 
 export function ServiceCard({ service, navigate }: ServiceCardProps) {
+  const url = getServiceUrl(service.slug);
   return (
-    <div
-      onClick={() => navigate(getServiceUrl(service.slug))}
-      className="card group flex cursor-pointer flex-col overflow-hidden"
+    <a
+      href={url}
+      onClick={(e) => {
+        e.preventDefault();
+        navigate(url);
+      }}
+      className="card group flex cursor-pointer flex-col overflow-hidden text-left"
     >
       <div className="relative h-52 overflow-hidden">
         <img
@@ -36,18 +41,21 @@ export function ServiceCard({ service, navigate }: ServiceCardProps) {
 
         <div
           className="mt-4 border-t border-neutral-100 pt-4"
-          onClick={(e) => e.stopPropagation()}
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            window.location.href = BUSINESS.phoneLink;
+          }}
         >
-          <a
-            href={BUSINESS.phoneLink}
+          <span
             className="inline-flex items-center gap-2 text-sm font-semibold text-aqua-600 transition-colors hover:text-aqua-700"
           >
             <Phone className="h-4 w-4" />
             Call about this service
-          </a>
+          </span>
         </div>
       </div>
-    </div>
+    </a>
   );
 }
 
@@ -57,10 +65,15 @@ interface ServiceAreaCardProps {
 }
 
 export function ServiceAreaCard({ area, navigate }: ServiceAreaCardProps) {
+  const url = getServiceAreaUrl(area.slug);
   return (
-    <div
-      onClick={() => navigate(`/service-areas/${area.slug}`)}
-      className="card group flex cursor-pointer items-center justify-between p-5"
+    <a
+      href={url}
+      onClick={(e) => {
+        e.preventDefault();
+        navigate(url);
+      }}
+      className="card group flex cursor-pointer items-center justify-between p-5 text-left"
     >
       <div className="flex items-center gap-3">
         <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand-50">
@@ -72,6 +85,6 @@ export function ServiceAreaCard({ area, navigate }: ServiceAreaCardProps) {
         </div>
       </div>
       <ArrowRight className="h-5 w-5 shrink-0 text-neutral-400 transition-all group-hover:translate-x-1 group-hover:text-aqua-600" />
-    </div>
+    </a>
   );
 }

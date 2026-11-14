@@ -35,37 +35,53 @@ export function NotFoundPage({ navigate }: NotFoundPageProps) {
 
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <CallButton variant="large" label={`Call ${BUSINESS.phone}`} />
-            <button
-              onClick={() => navigate('/')}
+            <a
+              href="/"
+              onClick={(e) => {
+                e.preventDefault();
+                navigate('/');
+              }}
               className="btn-outline"
             >
               <Home className="h-5 w-5" />
               Back to Home
-            </button>
+            </a>
           </div>
 
           <div className="mx-auto mt-12 grid max-w-2xl gap-4 sm:grid-cols-3">
-            <button
-              onClick={() => navigate('/services')}
+            <a
+              href="/services"
+              onClick={(e) => {
+                e.preventDefault();
+                navigate('/services');
+              }}
               className="rounded-xl bg-white/5 p-5 text-center ring-1 ring-white/10 transition-all hover:bg-white/10"
             >
               <Wrench className="mx-auto h-6 w-6 text-aqua-400" />
               <div className="mt-2 text-sm font-semibold text-white">Our Services</div>
-            </button>
-            <button
-              onClick={() => navigate('/service-areas')}
+            </a>
+            <a
+              href="/service-areas"
+              onClick={(e) => {
+                e.preventDefault();
+                navigate('/service-areas');
+              }}
               className="rounded-xl bg-white/5 p-5 text-center ring-1 ring-white/10 transition-all hover:bg-white/10"
             >
               <MapPin className="mx-auto h-6 w-6 text-aqua-400" />
               <div className="mt-2 text-sm font-semibold text-white">Service Areas</div>
-            </button>
-            <button
-              onClick={() => navigate('/contact')}
+            </a>
+            <a
+              href="/contact"
+              onClick={(e) => {
+                e.preventDefault();
+                navigate('/contact');
+              }}
               className="rounded-xl bg-white/5 p-5 text-center ring-1 ring-white/10 transition-all hover:bg-white/10"
             >
               <Droplets className="mx-auto h-6 w-6 text-aqua-400" />
               <div className="mt-2 text-sm font-semibold text-white">Contact Us</div>
-            </button>
+            </a>
           </div>
         </div>
       </section>

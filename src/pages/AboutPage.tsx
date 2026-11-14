@@ -2,7 +2,7 @@ import { SEO } from '@/components/SEO';
 import { PageHero } from '@/components/PageHero';
 import { FinalCTA } from '@/components/FinalCTA';
 import { CallButton } from '@/components/CallButton';
-import { BUSINESS, SERVICES, SERVICE_AREAS, getServiceUrl } from '@/data/business';
+import { BUSINESS, SERVICES, SERVICE_AREAS, getServiceUrl, getServiceAreaUrl } from '@/data/business';
 import { buildOrganizationSchema, buildBreadcrumbSchema, buildLocalBusinessSchema } from '@/data/schema';
 import { Phone, MapPin, Droplets, Wind, Hammer, Shield, Users, Wrench } from 'lucide-react';
 
@@ -97,9 +97,13 @@ export function AboutPage({ navigate }: AboutPageProps) {
 
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {SERVICES.map((service) => (
-              <button
+              <a
                 key={service.slug}
-                onClick={() => navigate(getServiceUrl(service.slug))}
+                href={getServiceUrl(service.slug)}
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigate(getServiceUrl(service.slug));
+                }}
                 className="card group p-6 text-left"
               >
                 <h3 className="text-lg font-bold text-navy-700 group-hover:text-brand-500">
@@ -108,7 +112,7 @@ export function AboutPage({ navigate }: AboutPageProps) {
                 <p className="mt-2 text-sm leading-relaxed text-neutral-600 text-pretty">
                   {service.description}
                 </p>
-              </button>
+              </a>
             ))}
           </div>
         </div>
@@ -209,13 +213,17 @@ export function AboutPage({ navigate }: AboutPageProps) {
 
           <div className="mt-10 flex flex-wrap justify-center gap-3">
             {SERVICE_AREAS.map((area) => (
-              <button
+              <a
                 key={area.slug}
-                onClick={() => navigate(`/service-areas/${area.slug}`)}
+                href={getServiceAreaUrl(area.slug)}
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigate(getServiceAreaUrl(area.slug));
+                }}
                 className="rounded-full bg-neutral-50 px-5 py-2.5 text-sm font-medium text-navy-600 ring-1 ring-neutral-200/60 transition-all hover:bg-brand-50 hover:text-brand-500 hover:ring-brand-200"
               >
                 {area.name}
-              </button>
+              </a>
             ))}
           </div>
         </div>

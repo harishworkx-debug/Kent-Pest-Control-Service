@@ -8,6 +8,7 @@ import {
   SERVICES,
   SERVICE_AREAS,
   getServiceArea,
+  getServiceAreaUrl,
 } from '@/data/business';
 import {
   buildBreadcrumbSchema,
@@ -28,7 +29,8 @@ export function ServiceAreaPage({ areaSlug, navigate }: ServiceAreaPageProps) {
   }
 
   const isPrimary = area.slug === BUSINESS.primaryLocationSlug;
-  const otherAreas = SERVICE_AREAS.filter((a) => a.slug !== area.slug).slice(0, 6);
+  const otherAreas = SERVICE_AREAS.filter((a) => a.slug !== area.slug);
+  const areaUrl = getServiceAreaUrl(area.slug);
 
   const seoTitle = `Water Damage Restoration in ${area.name} | Kent Pest Control Service`;
   const seoDesc = `Water damage restoration services in ${area.name}. Water removal, extraction, structural drying, flood cleanup, and repairs. Call ${BUSINESS.phone} for restoration services in ${area.shortName}.`;
@@ -39,7 +41,7 @@ export function ServiceAreaPage({ areaSlug, navigate }: ServiceAreaPageProps) {
     buildBreadcrumbSchema([
       { name: 'Home', url: '/' },
       { name: 'Service Areas', url: '/service-areas' },
-      { name: area.name, url: `/service-areas/${area.slug}` },
+      { name: area.name, url: areaUrl },
     ]),
     buildFAQSchema(areaFaqs),
   ];
@@ -49,7 +51,7 @@ export function ServiceAreaPage({ areaSlug, navigate }: ServiceAreaPageProps) {
       <SEO
         title={seoTitle}
         description={seoDesc}
-        canonical={`/service-areas/${area.slug}`}
+        canonical={areaUrl}
         jsonLd={jsonLd}
       />
 
@@ -60,7 +62,7 @@ export function ServiceAreaPage({ areaSlug, navigate }: ServiceAreaPageProps) {
         breadcrumbItems={[
           { name: 'Home', url: '/' },
           { name: 'Service Areas', url: '/service-areas' },
-          { name: area.name, url: `/service-areas/${area.slug}` },
+          { name: area.name, url: areaUrl },
         ]}
         navigate={navigate}
       />
@@ -144,13 +146,17 @@ export function ServiceAreaPage({ areaSlug, navigate }: ServiceAreaPageProps) {
                       {service.name} services in {area.shortName}, WA.
                     </p>
                     <div className="mt-4 flex items-center gap-3 pt-2">
-                      <button
-                        onClick={() => navigate(comboUrl)}
+                      <a
+                        href={comboUrl}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          navigate(comboUrl);
+                        }}
                         className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-500 transition-colors hover:text-brand-600"
                       >
                         {service.name} in {area.shortName}
                         <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                      </button>
+                      </a>
                     </div>
                     <div className="mt-3 border-t border-neutral-100 pt-3">
                       <a
@@ -183,9 +189,13 @@ export function ServiceAreaPage({ areaSlug, navigate }: ServiceAreaPageProps) {
 
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {otherAreas.map((otherArea) => (
-              <button
+              <a
                 key={otherArea.slug}
-                onClick={() => navigate(`/service-areas/${otherArea.slug}`)}
+                href={getServiceAreaUrl(otherArea.slug)}
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigate(getServiceAreaUrl(otherArea.slug));
+                }}
                 className="card group flex items-center justify-between p-5 text-left"
               >
                 <div className="flex items-center gap-3">
@@ -198,7 +208,7 @@ export function ServiceAreaPage({ areaSlug, navigate }: ServiceAreaPageProps) {
                   </div>
                 </div>
                 <ArrowRight className="h-5 w-5 shrink-0 text-neutral-400 transition-all group-hover:translate-x-1 group-hover:text-aqua-600" />
-              </button>
+              </a>
             ))}
           </div>
         </div>

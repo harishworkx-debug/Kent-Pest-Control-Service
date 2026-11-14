@@ -38,10 +38,10 @@ export function ServiceLocationPage({ serviceSlug, areaSlug, navigate }: Service
   const relatedServices = service.relatedServiceSlugs
     .map((slug) => getService(slug))
     .filter((s): s is NonNullable<typeof s> => s !== undefined)
-    .filter((s) => s.slug !== service.slug)
-    .slice(0, 3);
+    .filter((s) => s.slug !== service.slug);
 
-  const otherAreas = SERVICE_AREAS.filter((a) => a.slug !== area.slug).slice(0, 5);
+  const otherAreas = SERVICE_AREAS.filter((a) => a.slug !== area.slug);
+  const otherServices = SERVICES.filter((s) => s.slug !== service.slug);
 
   const seoTitle = `${service.name} in ${area.name} | Kent Pest Control Service`;
   const seoDesc = `${service.name} services in ${area.name}. ${service.description} Call ${BUSINESS.phone} for professional ${service.name.toLowerCase()} in ${area.shortName}, WA.`;
@@ -52,8 +52,8 @@ export function ServiceLocationPage({ serviceSlug, areaSlug, navigate }: Service
     buildServiceSchema(service, area),
     buildBreadcrumbSchema([
       { name: 'Home', url: '/' },
-      { name: 'Services', url: '/services' },
-      { name: service.name, url: getServiceUrl(service.slug) },
+      { name: 'Service Areas', url: '/service-areas' },
+      { name: area.name, url: getServiceAreaUrl(area.slug) },
       { name: `${service.name} in ${area.name}`, url: canonical },
     ]),
     buildFAQSchema(faqs),
@@ -74,9 +74,9 @@ export function ServiceLocationPage({ serviceSlug, areaSlug, navigate }: Service
         description={`${service.description} Available in ${area.name}${isPrimaryArea ? ' — our primary service area' : ' and surrounding communities'}. Call ${BUSINESS.phone} to discuss your needs.`}
         breadcrumbItems={[
           { name: 'Home', url: '/' },
-          { name: 'Services', url: '/services' },
-          { name: service.name, url: getServiceUrl(service.slug) },
-          { name: area.name, url: canonical },
+          { name: 'Service Areas', url: '/service-areas' },
+          { name: area.name, url: getServiceAreaUrl(area.slug) },
+          { name: `${service.name} in ${area.name}`, url: canonical },
         ]}
         navigate={navigate}
       />
@@ -99,6 +99,19 @@ export function ServiceLocationPage({ serviceSlug, areaSlug, navigate }: Service
                   {area.description} Whether you are dealing with a burst pipe, appliance leak, storm damage,
                   or another water-related issue in {area.shortName}, our {service.name.toLowerCase()} services
                   are available to help address the situation.
+                </p>
+                <p>
+                  Need full-spectrum water damage support? Explore our comprehensive{' '}
+                  <a
+                    href={getServiceAreaUrl(area.slug)}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      navigate(getServiceAreaUrl(area.slug));
+                    }}
+                    className="font-semibold text-brand-500 hover:text-brand-600 underline"
+                  >
+                    Water Damage Restoration in {area.name} Guide
+                  </a>.
                 </p>
                 <p>
                   Call us at{' '}
@@ -208,12 +221,16 @@ export function ServiceLocationPage({ serviceSlug, areaSlug, navigate }: Service
               </p>
 
               <div className="mt-6 flex flex-col gap-3">
-                {SERVICES.filter((s) => s.slug !== service.slug).slice(0, 4).map((otherService) => {
+                {otherServices.map((otherService) => {
                   const comboUrl = `/${otherService.slug}-${area.urlSlug}`;
                   return (
-                    <button
+                    <a
                       key={otherService.slug}
-                      onClick={() => navigate(comboUrl)}
+                      href={comboUrl}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        navigate(comboUrl);
+                      }}
                       className="card group flex items-center justify-between p-4 text-left"
                     >
                       <div className="flex items-center gap-3">
@@ -223,7 +240,7 @@ export function ServiceLocationPage({ serviceSlug, areaSlug, navigate }: Service
                         </span>
                       </div>
                       <ArrowRight className="h-4 w-4 shrink-0 text-neutral-400 transition-all group-hover:translate-x-1 group-hover:text-aqua-600" />
-                    </button>
+                    </a>
                   );
                 })}
               </div>
@@ -243,9 +260,13 @@ export function ServiceLocationPage({ serviceSlug, areaSlug, navigate }: Service
                 {otherAreas.map((otherArea) => {
                   const comboUrl = `/${service.slug}-${otherArea.urlSlug}`;
                   return (
-                    <button
+                    <a
                       key={otherArea.slug}
-                      onClick={() => navigate(comboUrl)}
+                      href={comboUrl}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        navigate(comboUrl);
+                      }}
                       className="card group flex items-center justify-between p-4 text-left"
                     >
                       <div className="flex items-center gap-3">
@@ -255,7 +276,7 @@ export function ServiceLocationPage({ serviceSlug, areaSlug, navigate }: Service
                         </span>
                       </div>
                       <ArrowRight className="h-4 w-4 shrink-0 text-neutral-400 transition-all group-hover:translate-x-1 group-hover:text-aqua-600" />
-                    </button>
+                    </a>
                   );
                 })}
               </div>

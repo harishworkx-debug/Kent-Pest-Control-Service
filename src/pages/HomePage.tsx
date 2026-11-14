@@ -74,10 +74,17 @@ function Hero({ navigate }: { navigate: (to: string) => void }) {
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
               <CallButton variant="large" label="Call (253) 523-3921" />
-              <button onClick={() => navigate('/services')} className="btn-outline">
+              <a
+                href="/services"
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigate('/services');
+                }}
+                className="btn-outline"
+              >
                 Explore Our Services
                 <ArrowRight className="h-5 w-5" />
-              </button>
+              </a>
             </div>
 
             <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-neutral-300">

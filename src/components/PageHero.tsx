@@ -18,16 +18,20 @@ export function PageHero({ eyebrow, title, description, breadcrumbItems, navigat
       <div className="absolute bottom-0 left-0 h-64 w-64 rounded-full bg-brand-500/15 blur-3xl" />
 
       <div className="container-page relative">
-        <nav className="mb-6 flex items-center gap-1.5 text-sm text-neutral-300">
+        <nav aria-label="Breadcrumb" className="mb-6 flex items-center gap-1.5 text-sm text-neutral-300">
           {breadcrumbItems.map((item, index) => (
             <span key={index} className="flex items-center gap-1.5">
               {index > 0 && <ChevronRight className="h-3.5 w-3.5 text-neutral-400" />}
-              <button
-                onClick={() => navigate(item.url)}
+              <a
+                href={item.url}
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigate(item.url);
+                }}
                 className={index === breadcrumbItems.length - 1 ? 'font-medium text-white' : 'transition-colors hover:text-aqua-300'}
               >
                 {item.name}
-              </button>
+              </a>
             </span>
           ))}
         </nav>

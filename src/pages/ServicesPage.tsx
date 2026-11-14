@@ -3,7 +3,7 @@ import { PageHero } from '@/components/PageHero';
 import { FinalCTA } from '@/components/FinalCTA';
 import { FAQSection } from '@/components/FAQSection';
 import { ServiceCard } from '@/components/Cards';
-import { SERVICES, SERVICE_AREAS, BUSINESS } from '@/data/business';
+import { SERVICES, SERVICE_AREAS, BUSINESS, getServiceAreaUrl } from '@/data/business';
 import { buildBreadcrumbSchema, buildFAQSchema } from '@/data/schema';
 import { ArrowRight } from 'lucide-react';
 
@@ -73,9 +73,13 @@ export function ServicesPage({ navigate }: ServicesPageProps) {
 
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {SERVICE_AREAS.map((area) => (
-              <button
+              <a
                 key={area.slug}
-                onClick={() => navigate(`/service-areas/${area.slug}`)}
+                href={getServiceAreaUrl(area.slug)}
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigate(getServiceAreaUrl(area.slug));
+                }}
                 className="card group flex items-center justify-between p-5 text-left"
               >
                 <div>
@@ -85,7 +89,7 @@ export function ServicesPage({ navigate }: ServicesPageProps) {
                   <p className="mt-0.5 text-sm text-neutral-500">Restoration services available</p>
                 </div>
                 <ArrowRight className="h-5 w-5 shrink-0 text-neutral-400 transition-all group-hover:translate-x-1 group-hover:text-aqua-600" />
-              </button>
+              </a>
             ))}
           </div>
         </div>

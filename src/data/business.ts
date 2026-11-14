@@ -742,6 +742,12 @@ export function getServiceUrl(serviceSlug: string): string {
   return `/${serviceSlug}-${MAIN_SERVICE_AREA.urlSlug}`;
 }
 
+export function getServiceAreaUrl(areaSlug: string): string {
+  const area = getServiceArea(areaSlug);
+  if (!area) return '/service-areas';
+  return `/water-damage-${area.urlSlug}`;
+}
+
 export function buildServiceAreaUrl(serviceSlug: string, areaSlug: string): string {
   const service = getService(serviceSlug);
   const area = getServiceArea(areaSlug);

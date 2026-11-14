@@ -1,6 +1,6 @@
 import { Phone, MapPin, Globe, Droplets, Clock } from 'lucide-react';
 import { Logo } from '@/components/Logo';
-import { BUSINESS, SERVICES, SERVICE_AREAS, getServiceUrl } from '@/data/business';
+import { BUSINESS, SERVICES, SERVICE_AREAS, getServiceUrl, getServiceAreaUrl } from '@/data/business';
 
 interface FooterProps {
   navigate: (to: string) => void;
@@ -35,21 +35,29 @@ export function Footer({ navigate }: FooterProps) {
             <ul className="mt-4 space-y-2.5">
               {SERVICES.map((service) => (
                 <li key={service.slug}>
-                  <button
-                    onClick={() => handleNav(getServiceUrl(service.slug))}
+                  <a
+                    href={getServiceUrl(service.slug)}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleNav(getServiceUrl(service.slug));
+                    }}
                     className="text-sm text-neutral-300 transition-colors hover:text-white"
                   >
                     {service.name}
-                  </button>
+                  </a>
                 </li>
               ))}
               <li>
-                <button
-                  onClick={() => handleNav('/services')}
+                <a
+                  href="/services"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNav('/services');
+                  }}
                   className="text-sm font-semibold text-aqua-400 transition-colors hover:text-aqua-300"
                 >
                   View All Services
-                </button>
+                </a>
               </li>
             </ul>
           </div>
@@ -57,23 +65,31 @@ export function Footer({ navigate }: FooterProps) {
           <div>
             <h3 className="text-sm font-bold uppercase tracking-wider text-aqua-400">Service Areas</h3>
             <ul className="mt-4 space-y-2.5">
-              {SERVICE_AREAS.slice(0, 6).map((area) => (
+              {SERVICE_AREAS.map((area) => (
                 <li key={area.slug}>
-                  <button
-                    onClick={() => handleNav(`/service-areas/${area.slug}`)}
+                  <a
+                    href={getServiceAreaUrl(area.slug)}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleNav(getServiceAreaUrl(area.slug));
+                    }}
                     className="text-sm text-neutral-300 transition-colors hover:text-white"
                   >
-                    {area.name}
-                  </button>
+                    Water Damage in {area.shortName}
+                  </a>
                 </li>
               ))}
               <li>
-                <button
-                  onClick={() => handleNav('/service-areas')}
+                <a
+                  href="/service-areas"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNav('/service-areas');
+                  }}
                   className="text-sm font-semibold text-aqua-400 transition-colors hover:text-aqua-300"
                 >
                   View All Areas
-                </button>
+                </a>
               </li>
             </ul>
           </div>
@@ -119,31 +135,95 @@ export function Footer({ navigate }: FooterProps) {
             </ul>
 
             <div className="mt-5 flex flex-col gap-2">
-              <button
-                onClick={() => handleNav('/about')}
+              <a
+                href="/about"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNav('/about');
+                }}
                 className="text-left text-sm text-neutral-300 transition-colors hover:text-white"
               >
                 About Us
-              </button>
-              <button
-                onClick={() => handleNav('/contact')}
+              </a>
+              <a
+                href="/contact"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNav('/contact');
+                }}
                 className="text-left text-sm text-neutral-300 transition-colors hover:text-white"
               >
                 Contact
-              </button>
-              <button
-                onClick={() => handleNav('/privacy-policy')}
+              </a>
+              <a
+                href="/privacy-policy"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNav('/privacy-policy');
+                }}
                 className="text-left text-sm text-neutral-300 transition-colors hover:text-white"
               >
                 Privacy Policy
-              </button>
-              <button
-                onClick={() => handleNav('/terms-and-conditions')}
+              </a>
+              <a
+                href="/terms-and-conditions"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNav('/terms-and-conditions');
+                }}
                 className="text-left text-sm text-neutral-300 transition-colors hover:text-white"
               >
                 Terms and Conditions
-              </button>
+              </a>
             </div>
+          </div>
+        </div>
+
+        {/* City-by-City Restoration Coverage Directory (SEO Internal Linking Mesh) */}
+        <div className="mt-12 border-t border-navy-600/60 pt-8">
+          <div className="flex flex-col gap-1.5">
+            <span className="text-xs font-bold uppercase tracking-wider text-aqua-400">
+              Washington Service Area Directory & Local Coverage
+            </span>
+            <p className="text-xs text-neutral-400">
+              Explore 24/7 water damage restoration, water removal, and emergency cleanup across King County communities:
+            </p>
+          </div>
+
+          <div className="mt-6 grid grid-cols-2 gap-6 text-xs sm:grid-cols-3 md:grid-cols-5">
+            {SERVICE_AREAS.map((area) => (
+              <div key={area.slug} className="flex flex-col gap-1.5">
+                <a
+                  href={getServiceAreaUrl(area.slug)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNav(getServiceAreaUrl(area.slug));
+                  }}
+                  className="font-bold text-white transition-colors hover:text-aqua-300"
+                >
+                  {area.name}
+                </a>
+                <ul className="space-y-1 text-neutral-400">
+                  {SERVICES.slice(0, 5).map((s) => {
+                    const comboUrl = `/${s.slug}-${area.urlSlug}`;
+                    return (
+                      <li key={s.slug}>
+                        <a
+                          href={comboUrl}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            handleNav(comboUrl);
+                          }}
+                          className="transition-colors hover:text-neutral-200"
+                        >
+                          {s.shortName}
+                        </a>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
 

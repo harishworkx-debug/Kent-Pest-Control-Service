@@ -2,7 +2,7 @@ import { SEO } from '@/components/SEO';
 import { PageHero } from '@/components/PageHero';
 import { FinalCTA } from '@/components/FinalCTA';
 import { FAQSection } from '@/components/FAQSection';
-import { SERVICE_AREAS, SERVICES, BUSINESS, getServiceUrl } from '@/data/business';
+import { SERVICE_AREAS, SERVICES, BUSINESS, getServiceUrl, getServiceAreaUrl } from '@/data/business';
 import { buildBreadcrumbSchema, buildFAQSchema } from '@/data/schema';
 import { ArrowRight, MapPin } from 'lucide-react';
 
@@ -53,9 +53,13 @@ export function ServiceAreasPage({ navigate }: ServiceAreasPageProps) {
 
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {SERVICE_AREAS.map((area, index) => (
-              <button
+              <a
                 key={area.slug}
-                onClick={() => navigate(`/service-areas/${area.slug}`)}
+                href={getServiceAreaUrl(area.slug)}
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigate(getServiceAreaUrl(area.slug));
+                }}
                 className="card group p-6 text-left"
               >
                 <div className="flex items-start justify-between">
@@ -78,7 +82,7 @@ export function ServiceAreasPage({ navigate }: ServiceAreasPageProps) {
                   View services in {area.shortName}
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </div>
-              </button>
+              </a>
             ))}
           </div>
         </div>
@@ -97,13 +101,17 @@ export function ServiceAreasPage({ navigate }: ServiceAreasPageProps) {
 
           <div className="mt-10 flex flex-wrap justify-center gap-3">
             {SERVICES.map((service) => (
-              <button
+              <a
                 key={service.slug}
-                onClick={() => navigate(getServiceUrl(service.slug))}
+                href={getServiceUrl(service.slug)}
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigate(getServiceUrl(service.slug));
+                }}
                 className="rounded-full bg-neutral-50 px-5 py-2.5 text-sm font-medium text-navy-600 ring-1 ring-neutral-200/60 transition-all hover:bg-brand-50 hover:text-brand-500 hover:ring-brand-200"
               >
                 {service.name}
-              </button>
+              </a>
             ))}
           </div>
         </div>

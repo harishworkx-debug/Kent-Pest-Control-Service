@@ -20,6 +20,7 @@ import {
   getService,
   getServiceArea,
   getServiceUrl,
+  getServiceAreaUrl,
 } from '@/data/business';
 
 function App() {
@@ -34,6 +35,12 @@ function App() {
         navigate(getServiceUrl(service.slug), true);
         return;
       }
+    }
+
+    const areaMatch = matchServiceArea(path);
+    if (areaMatch && areaMatch.isLegacy) {
+      navigate(getServiceAreaUrl(areaMatch.areaSlug), true);
+      return;
     }
 
     const combo = matchServiceLocation(path);
@@ -63,12 +70,10 @@ function App() {
       }
     }
 
-    // Service area detail: /service-areas/{area-slug}
-    if (path.startsWith('/service-areas/')) {
-      const areaSlug = path.replace('/service-areas/', '');
-      if (getServiceArea(areaSlug)) {
-        return <ServiceAreaPage areaSlug={areaSlug} navigate={navigate} />;
-      }
+    // Service area detail: /water-damage-{area-slug} (and legacy /service-areas/{area-slug})
+    const areaMatch = matchServiceArea(path);
+    if (areaMatch) {
+      return <ServiceAreaPage areaSlug={areaMatch.areaSlug} navigate={navigate} />;
     }
 
     // Combined service-location: /{service-slug}-{area-name}
@@ -105,6 +110,25 @@ function App() {
       <Footer navigate={navigate} />
     </div>
   );
+}
+
+function matchServiceArea(path: string): { areaSlug: string; isLegacy?: boolean } | null {
+  for (const area of SERVICE_AREAS) {
+    // New pattern: /water-damage-{area.urlSlug} (e.g. /water-damage-tukwila-wa)
+    if (path === `/water-damage-${area.urlSlug}`) {
+      return { areaSlug: area.slug };
+    }
+    // Legacy /service-areas/{area.slug}
+    if (path === `/service-areas/${area.slug}`) {
+      return { areaSlug: area.slug, isLegacy: true };
+    }
+    // Legacy without -wa
+    const withoutWa = area.urlSlug.replace(/-wa$/, '');
+    if (path === `/service-areas/${withoutWa}` || path === `/water-damage-${withoutWa}`) {
+      return { areaSlug: area.slug, isLegacy: true };
+    }
+  }
+  return null;
 }
 
 function matchServiceLocation(path: string): { serviceSlug: string; areaSlug: string; isLegacy?: boolean } | null {
