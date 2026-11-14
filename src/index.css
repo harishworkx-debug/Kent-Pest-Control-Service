@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #1F2A35;
+    background-color: #F4F7FA;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', 'Inter', system-ui, sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  h1 {
+    font-weight: 800;
+  }
+
+  ::selection {
+    background-color: #20B8B0;
+    color: #FFFFFF;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn-call {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-aqua-400 px-6 py-3.5 text-base font-semibold text-navy-900 transition-all duration-300 ease-out-expo hover:bg-aqua-300 hover:shadow-lg hover:shadow-aqua-400/30 hover:-translate-y-0.5 active:translate-y-0;
+  }
+
+  .btn-call-lg {
+    @apply inline-flex items-center justify-center gap-2.5 rounded-xl bg-aqua-400 px-8 py-4 text-lg font-bold text-navy-900 transition-all duration-300 ease-out-expo hover:bg-aqua-300 hover:shadow-xl hover:shadow-aqua-400/30 hover:-translate-y-0.5 active:translate-y-0;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border-2 border-white/40 px-6 py-3.5 text-base font-semibold text-white transition-all duration-300 ease-out-expo hover:border-white hover:bg-white/10 hover:-translate-y-0.5 active:translate-y-0;
+  }
+
+  .btn-outline-navy {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border-2 border-brand-500 px-6 py-3.5 text-base font-semibold text-brand-500 transition-all duration-300 ease-out-expo hover:bg-brand-500 hover:text-white hover:-translate-y-0.5 active:translate-y-0;
+  }
+
+  .section-eyebrow {
+    @apply inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-aqua-600;
+  }
+
+  .section-title {
+    @apply mt-3 text-3xl font-bold text-navy-700 sm:text-4xl lg:text-[2.75rem] lg:leading-tight;
+  }
+
+  .card {
+    @apply rounded-2xl bg-white shadow-sm ring-1 ring-neutral-200/60 transition-all duration-300 ease-out-expo hover:shadow-xl hover:shadow-navy-900/5 hover:-translate-y-1;
+  }
+
+  .nav-link {
+    @apply relative text-sm font-medium text-navy-600 transition-colors duration-200 hover:text-brand-500;
+  }
+
+  .nav-link::after {
+    @apply absolute -bottom-1 left-0 h-0.5 w-0 rounded-full bg-aqua-400 transition-all duration-300 ease-out-expo;
+    content: '';
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  .dropdown-panel {
+    @apply absolute left-0 top-full mt-2 w-72 origin-top rounded-2xl bg-white p-2 opacity-0 invisible translate-y-2 shadow-xl ring-1 ring-neutral-200/60 transition-all duration-200 ease-out-expo group-hover:visible group-hover:opacity-100 group-hover:translate-y-0;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+}

@@ -1,0 +1,82 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  theme: {
+    extend: {
+      colors: {
+        navy: {
+          50: '#E8EDF3',
+          100: '#C5D0DE',
+          200: '#9FB0C7',
+          300: '#7A90B0',
+          400: '#4E6B92',
+          500: '#2D5078',
+          600: '#1F3D5F',
+          700: '#14243A',
+          800: '#0F1B2C',
+          900: '#0A1320',
+        },
+        brand: {
+          50: '#EAF3FA',
+          100: '#D0E6F4',
+          200: '#A5D0EA',
+          300: '#74B5DB',
+          400: '#4A9BCB',
+          500: '#2367A5',
+          600: '#1B5588',
+          700: '#15446B',
+          800: '#103350',
+          900: '#0A2236',
+        },
+        aqua: {
+          50: '#E6F9F8',
+          100: '#C2EEEC',
+          200: '#8FDEDB',
+          300: '#5BCDCA',
+          400: '#20B8B0',
+          500: '#1BA098',
+          600: '#168079',
+          700: '#126160',
+          800: '#0D4848',
+          900: '#083030',
+        },
+        neutral: {
+          50: '#F4F7FA',
+          100: '#EAEFF5',
+          200: '#D5DFEA',
+          300: '#B0BFD0',
+          400: '#8497AC',
+          500: '#5F7589',
+          600: '#475969',
+          700: '#33424F',
+          800: '#1F2A35',
+          900: '#0E141B',
+        },
+      },
+      fontFamily: {
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        display: ['Poppins', 'Inter', 'system-ui', 'sans-serif'],
+      },
+      container: {
+        center: true,
+        padding: {
+          DEFAULT: '1rem',
+          sm: '1.5rem',
+          lg: '2rem',
+          xl: '2.5rem',
+        },
+        screens: {
+          sm: '640px',
+          md: '768px',
+          lg: '1024px',
+          xl: '1200px',
+          '2xl': '1320px',
+        },
+      },
+      transitionTimingFunction: {
+        'out-expo': 'cubic-bezier(0.16, 1, 0.3, 1)',
+      },
+    },
+  },
+  plugins: [],
+};
