@@ -118,7 +118,7 @@ export function ServiceAreaPage({ areaSlug, navigate }: ServiceAreaPageProps) {
             <h2 className="section-title">Restoration Services in {area.shortName}</h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-neutral-600 text-pretty">
               The following water damage restoration services are available in {area.name}. Select a service
-              to learn more, or call us to discuss your specific needs.
+              to view details, or call us to discuss your specific needs.
             </p>
           </div>
 

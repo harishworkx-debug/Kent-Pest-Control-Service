@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Menu, X, Phone, ChevronDown } from 'lucide-react';
 import { Logo } from '@/components/Logo';
 import { CallButton } from '@/components/CallButton';
-import { BUSINESS, SERVICES, SERVICE_AREAS } from '@/data/business';
+import { BUSINESS, SERVICES, SERVICE_AREAS, getServiceUrl } from '@/data/business';
 import { useRouter } from '@/hooks/useRouter';
 
 interface HeaderProps {
@@ -85,7 +85,7 @@ export function Header({ navigate, currentPath }: HeaderProps) {
                     {SERVICES.map((service) => (
                       <button
                         key={service.slug}
-                        onClick={() => handleNav(`/services/${service.slug}`)}
+                        onClick={() => handleNav(getServiceUrl(service.slug))}
                         className="rounded-lg px-3 py-2 text-left text-sm text-neutral-600 transition-colors hover:bg-neutral-50 hover:text-brand-500"
                       >
                         {service.name}
@@ -96,7 +96,7 @@ export function Header({ navigate, currentPath }: HeaderProps) {
               </div>
 
               <div className="group relative">
-                <button className={`nav-link flex items-center gap-1 ${currentPath.startsWith('/service-areas') || currentPath.includes('-wa') ? 'text-brand-500' : ''}`}>
+                <button className={`nav-link flex items-center gap-1 ${currentPath.startsWith('/service-areas') ? 'text-brand-500' : ''}`}>
                   Service Areas
                   <ChevronDown className="h-4 w-4" />
                 </button>
@@ -163,7 +163,7 @@ export function Header({ navigate, currentPath }: HeaderProps) {
                     <div className="ml-3 mt-1 flex flex-col gap-0.5 border-l border-neutral-200 pl-3">
                       <MobileSubLink onClick={() => handleNav('/services')}>All Services</MobileSubLink>
                       {SERVICES.map((service) => (
-                        <MobileSubLink key={service.slug} onClick={() => handleNav(`/services/${service.slug}`)}>
+                        <MobileSubLink key={service.slug} onClick={() => handleNav(getServiceUrl(service.slug))}>
                           {service.name}
                         </MobileSubLink>
                       ))}

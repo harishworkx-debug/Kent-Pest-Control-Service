@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useRouter } from '@/hooks/useRouter';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
@@ -12,10 +13,37 @@ import { NotFoundPage } from '@/pages/NotFoundPage';
 import { ServiceDetailPage } from '@/pages/ServiceDetailPage';
 import { ServiceAreaPage } from '@/pages/ServiceAreaPage';
 import { ServiceLocationPage } from '@/pages/ServiceLocationPage';
-import { SERVICES, SERVICE_AREAS, getService, getServiceArea } from '@/data/business';
+import {
+  SERVICES,
+  SERVICE_AREAS,
+  BUSINESS,
+  getService,
+  getServiceArea,
+  getServiceUrl,
+} from '@/data/business';
 
 function App() {
   const { path, navigate } = useRouter();
+
+  // Redirect legacy /services/{service-slug} URLs and legacy URLs without -wa to /{service-slug}-{area-slug}
+  useEffect(() => {
+    if (path.startsWith('/services/')) {
+      const serviceSlug = path.replace('/services/', '');
+      const service = getService(serviceSlug);
+      if (service) {
+        navigate(getServiceUrl(service.slug), true);
+        return;
+      }
+    }
+
+    const combo = matchServiceLocation(path);
+    if (combo && combo.isLegacy) {
+      const area = getServiceArea(combo.areaSlug);
+      if (area) {
+        navigate(`/${combo.serviceSlug}-${area.urlSlug}`, true);
+      }
+    }
+  }, [path, navigate]);
 
   const renderPage = () => {
     // Static routes
@@ -27,7 +55,7 @@ function App() {
     if (path === '/privacy-policy') return <PrivacyPolicyPage navigate={navigate} />;
     if (path === '/terms-and-conditions') return <TermsPage navigate={navigate} />;
 
-    // Service detail: /services/{service-slug}
+    // Service detail: /services/{service-slug} (render while redirect occurs)
     if (path.startsWith('/services/')) {
       const serviceSlug = path.replace('/services/', '');
       if (getService(serviceSlug)) {
@@ -47,6 +75,10 @@ function App() {
     // Match against all possible combinations
     const comboMatch = matchServiceLocation(path);
     if (comboMatch) {
+      // If matching the primary service area (Kent), render the main ServiceDetailPage
+      if (comboMatch.areaSlug === BUSINESS.primaryLocationSlug) {
+        return <ServiceDetailPage serviceSlug={comboMatch.serviceSlug} navigate={navigate} />;
+      }
       return (
         <ServiceLocationPage
           serviceSlug={comboMatch.serviceSlug}
@@ -75,13 +107,18 @@ function App() {
   );
 }
 
-function matchServiceLocation(path: string): { serviceSlug: string; areaSlug: string } | null {
+function matchServiceLocation(path: string): { serviceSlug: string; areaSlug: string; isLegacy?: boolean } | null {
   // Check all service + area combinations
   for (const service of SERVICES) {
     for (const area of SERVICE_AREAS) {
       const expectedUrl = `/${service.slug}-${area.urlSlug}`;
       if (path === expectedUrl) {
         return { serviceSlug: service.slug, areaSlug: area.slug };
+      }
+      // Match legacy URLs without -wa (e.g. /water-damage-restoration-kent)
+      const withoutWa = area.urlSlug.replace(/-wa$/, '');
+      if (path === `/${service.slug}-${withoutWa}`) {
+        return { serviceSlug: service.slug, areaSlug: area.slug, isLegacy: true };
       }
     }
   }

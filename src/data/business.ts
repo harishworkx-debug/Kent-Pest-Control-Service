@@ -388,12 +388,256 @@ export const SERVICES: ServiceInfo[] = [
     ],
     relatedServiceSlugs: ['water-damage-restoration', 'structural-drying', 'flood-damage-cleanup', 'water-extraction'],
   },
+  {
+    slug: 'sewage-backup-cleanup',
+    name: 'Sewage Backup Cleanup',
+    shortName: 'Sewage Cleanup',
+    description:
+      'Emergency sewage backup cleanup, hazardous waste removal, and deep sanitization for properties in Kent, WA.',
+    longDescription:
+      'Sewage backups introduce hazardous black water containing harmful pathogens, bacteria, and viruses into living and working spaces. Kent Pest Control Service provides professional sewage backup cleanup and decontamination across Kent, WA and nearby Washington communities. We quickly contain the contamination, safely extract toxic wastewater, dispose of non-salvageable porous items, apply hospital-grade disinfectants, and complete structural drying to make your building safe once again.',
+    image: 'https://images.pexels.com/photos/5691544/pexels-photo-5691544.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+    imageAlt: 'Restoration technician in protective gear cleaning and sanitizing contaminated area after sewage backup',
+    problems: [
+      'Main sewer line backups causing raw wastewater to overflow into bathrooms and basements',
+      'Severe toilet or drain overflows spreading contaminated black water across floors',
+      'Harmful airborne biohazard contaminants and persistent sewer odors spreading through ductwork',
+      'Porous materials like carpet, padding, and drywall saturated with dangerous bacteria',
+      'High risk of illness and disease from exposure to sewage-borne microorganisms',
+      'Subfloor and wall cavity contamination requiring controlled removal and antimicrobial sanitization',
+    ],
+    process: [
+      {
+        title: 'Containment & Safety',
+        description:
+          'We establish containment barriers and utilize full personal protective equipment (PPE) to isolate hazardous biohazards and prevent pathogen spread.',
+      },
+      {
+        title: 'Sewage Extraction',
+        description:
+          'Standing wastewater and hazardous sewage solids are extracted using specialized pumping and vacuum equipment following environmental safety protocols.',
+      },
+      {
+        title: 'Contaminated Material Removal',
+        description:
+          'Porous materials that cannot be safely disinfected — such as soaked carpet, padding, and affected drywall sections — are removed and safely disposed of.',
+      },
+      {
+        title: 'Deep Disinfection & Sanitization',
+        description:
+          'Hospital-grade EPA-registered disinfectants and antimicrobial agents are applied to all affected framing, concrete, and hard surfaces.',
+      },
+      {
+        title: 'Dehumidification & Structural Drying',
+        description:
+          'Industrial dehumidifiers and air movers run continuously with moisture meter tracking to restore safe moisture levels throughout the structure.',
+      },
+    ],
+    faqs: [
+      {
+        q: 'Is sewage backup considered a health emergency?',
+        a: 'Yes. Sewage water is classified as Category 3 (black water) and contains hazardous bacteria, parasites, and chemical contaminants. Avoid direct contact and call Kent Pest Control Service at (253) 523-3921 for immediate professional cleanup.',
+      },
+      {
+        q: 'Can carpets or drywall be saved after a sewage spill?',
+        a: 'In almost all cases, porous materials like carpets, padding, and low-wall drywall that absorb raw sewage cannot be completely sanitized and must be removed and replaced for health safety. Non-porous surfaces like tile and concrete can be thoroughly disinfected.',
+      },
+      {
+        q: 'How fast should sewage cleanup begin?',
+        a: 'Immediately. Bacteria and microbes multiply rapidly within hours of a sewage backup. The faster our team begins extraction and sanitization, the less damage and biohazard risk your property will face.',
+      },
+    ],
+    relatedServiceSlugs: ['water-damage-restoration', 'water-removal', 'flood-damage-cleanup', 'structural-drying'],
+  },
+  {
+    slug: 'basement-flood-cleanup',
+    name: 'Basement Flood Cleanup',
+    shortName: 'Basement Flood Cleanup',
+    description:
+      'Rapid basement water extraction, sump pump failure remediation, and structural drying in Kent, WA.',
+    longDescription:
+      'Basements in the Pacific Northwest frequently face flooding from heavy winter rains, failed sump pumps, foundation seepage, and plumbing failures. Kent Pest Control Service provides comprehensive basement flood cleanup across Kent, WA and surrounding communities. We extract standing water, thoroughly dry concrete slabs and foundation framing, prevent moisture accumulation behind basement walls, and protect your home from subterranean mold growth.',
+    image: 'https://images.pexels.com/photos/4030026/pexels-photo-4030026.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+    imageAlt: 'Flooded basement floor undergoing professional water extraction and structural drying',
+    problems: [
+      'Sump pump failure during prolonged rainstorms causing rapid basement water accumulation',
+      'Hydrostatic pressure pushing groundwater through foundation wall cracks and expansion joints',
+      'Basement water heater or washing machine supply hose failure flooding the lower level',
+      'Excess moisture pooling under finished basement subflooring and vinyl plank flooring',
+      'Persistent dampness, high subterranean humidity, and musty basement odors',
+      'Moisture wicking into framing studs, perimeter drywall, and basement insulation',
+    ],
+    process: [
+      {
+        title: 'Rapid Water Extraction',
+        description:
+          'Heavy-duty submersible extractors and high-volume suction units remove pooled groundwater and standing water from the basement floor.',
+      },
+      {
+        title: 'Moisture Detection & Mapping',
+        description:
+          'Thermal cameras and pinless moisture meters identify moisture trapped in concrete slabs, foundation perimeters, and wall cavities.',
+      },
+      {
+        title: 'Material Removal & Salvage Assessment',
+        description:
+          'We inspect carpets, baseboards, and drywall to determine what can be dried in place and what damaged elements require controlled removal.',
+      },
+      {
+        title: 'Specialized Concrete & Structural Drying',
+        description:
+          'Industrial low-grain refrigerant (LGR) dehumidifiers and high-velocity air movers draw moisture out of dense concrete pores and wood framing.',
+      },
+      {
+        title: 'Antimicrobial Protection & Odor Control',
+        description:
+          'EPA-registered antimicrobial treatments are applied to prevent mold colonization and eliminate subterranean damp odors.',
+      },
+    ],
+    faqs: [
+      {
+        q: 'What should I do first if my basement floods?',
+        a: 'First, check for electrical hazards — do not enter standing water if electrical outlets or appliances are submerged. Shut off main power if safely accessible, then call Kent Pest Control Service at (253) 523-3921 for rapid water extraction.',
+      },
+      {
+        q: 'Why do basements take longer to dry than upper levels?',
+        a: 'Basements have limited natural ventilation, high ambient humidity, and are built with concrete, which retains moisture deep within its pores. Specialized high-capacity commercial dehumidifiers are required to pull moisture out thoroughly.',
+      },
+      {
+        q: 'Will my flooded basement develop mold?',
+        a: 'Mold can begin forming within 24 to 48 hours of water intrusion. Fast extraction and aggressive commercial drying keep moisture levels below the threshold where mold spores can germinate.',
+      },
+    ],
+    relatedServiceSlugs: ['water-damage-restoration', 'water-extraction', 'structural-drying', 'flood-damage-cleanup'],
+  },
+  {
+    slug: 'burst-pipe-water-cleanup',
+    name: 'Burst Pipe Water Cleanup',
+    shortName: 'Burst Pipe Cleanup',
+    description:
+      'Fast-response water removal and structural drying for frozen or burst plumbing pipes in Kent, WA.',
+    longDescription:
+      'A burst or ruptured water pipe can release hundreds of gallons of pressurized water in a matter of minutes, soaking ceilings, walls, and flooring across multiple floors. Kent Pest Control Service specializes in burst pipe water cleanup in Kent, WA and nearby areas. Whether caused by winter freeze-ups, elevated water pressure, or aging pipe materials, our team stops further spread, extracts standing water, dries hidden cavities, and restores your property.',
+    image: 'https://images.pexels.com/photos/5691653/pexels-photo-5691653.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+    imageAlt: 'Plumbing pipe burst repair and wall cavity drying in a residential property',
+    problems: [
+      'Pipes freezing and bursting during cold snaps inside exterior walls, attics, or crawl spaces',
+      'Sudden high-pressure plumbing line breaks discharging large volumes of water across rooms',
+      'Water penetrating multiple levels from upstairs bathroom or supply line ruptures',
+      'Collapsed ceiling drywall and saturated insulation from overhead pipe failures',
+      'Hidden moisture migrating inside wall cavities, behind cabinets, and beneath hardwood floors',
+      'Swelling baseboards, door frames, and buckled flooring caused by pressurized water exposure',
+    ],
+    process: [
+      {
+        title: 'Emergency Water Containment',
+        description:
+          'We verify the main water shutoff is engaged and locate the pipe rupture point to halt incoming water flow immediately.',
+      },
+      {
+        title: 'Intense Water Extraction',
+        description:
+          'High-power extraction units pull water from carpet, hardwood, and tile before deeper subfloor saturation occurs.',
+      },
+      {
+        title: 'Cavity & Wall Assembly Drying',
+        description:
+          'Specialized cavity drying systems and injectidry units circulate warm, dry air into enclosed wall and ceiling spaces.',
+      },
+      {
+        title: 'Daily Thermal Monitoring',
+        description:
+          'Infrared thermal cameras and moisture meters monitor hidden drying progress behind drywall and under cabinets every day.',
+      },
+      {
+        title: 'Surface Restoration & Repairs',
+        description:
+          'Damaged drywall, insulation, and trim are prepped for repair and replacement to return the home to pre-loss condition.',
+      },
+    ],
+    faqs: [
+      {
+        q: 'How much water can a burst pipe release?',
+        a: 'A typical supply line pipe burst can discharge 4 to 8 gallons per minute under residential pressure — translating to hundreds of gallons within an hour. Rapid water extraction is vital to minimize structural damage.',
+      },
+      {
+        q: 'Can drywall and wall cavities be dried without tearing everything down?',
+        a: 'If water is extracted promptly and the water source is clean, specialized wall cavity drying equipment can often dry framing and drywall in place without requiring full demolition.',
+      },
+      {
+        q: 'Why do pipes burst in the Kent, WA region?',
+        a: 'Sub-freezing temperatures in winter freeze water within uninsulated or exterior-facing pipes. The expanding ice creates intense pressure that ruptures copper, PEX, or PVC lines.',
+      },
+    ],
+    relatedServiceSlugs: ['water-damage-restoration', 'water-removal', 'water-damage-repair', 'structural-drying'],
+  },
+  {
+    slug: 'commercial-water-damage',
+    name: 'Commercial Water Damage Restoration',
+    shortName: 'Commercial Restoration',
+    description:
+      'Large-scale commercial water extraction and drying to minimize downtime for businesses in Kent, WA.',
+    longDescription:
+      'Water emergencies in commercial properties disrupt daily operations, damage valuable inventory, and create safety concerns for tenants and employees. Kent Pest Control Service delivers rapid, professional commercial water damage restoration tailored for businesses, industrial warehouses, offices, and retail facilities in Kent, WA and the surrounding Puget Sound corridor. We work around the clock to contain damage, dry large open spaces, and get your business operational.',
+    image: 'https://images.pexels.com/photos/4481534/pexels-photo-4481534.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+    imageAlt: 'Commercial warehouse and industrial facility undergoing commercial water damage restoration',
+    problems: [
+      'Commercial fire sprinkler system malfunctions or pipe breaks discharging thousands of gallons',
+      'Roof failure or HVAC condensation line overflows impacting retail and office areas',
+      'Multi-story commercial plumbing line leaks affecting multiple corporate tenant suites',
+      'Flooding across large warehouse, showroom, or distribution center concrete floors',
+      'Potential damage to sensitive electronic equipment, office documents, and commercial inventory',
+      'Revenue and operational losses caused by mandatory business downtime during water emergencies',
+    ],
+    process: [
+      {
+        title: 'Commercial Assessment & Containment',
+        description:
+          'We assess facility impact, establish containment zones to protect unaffected business areas, and prioritize critical assets.',
+      },
+      {
+        title: 'High-Volume Extraction',
+        description:
+          'Industrial trailer-mounted and high-capacity extractors rapidly clear massive square footage of standing water.',
+      },
+      {
+        title: 'Asset & Inventory Protection',
+        description:
+          'We protect office equipment, industrial machinery, and merchandise using containment barriers and climate stabilization.',
+      },
+      {
+        title: 'Large-Scale Structural Drying',
+        description:
+          'Industrial desiccant and high-capacity LGR dehumidifiers dry commercial structures, concrete slabs, and subfloors efficiently.',
+      },
+      {
+        title: 'Sanitization & Re-occupancy Clearance',
+        description:
+          'All affected surfaces are disinfected and tested to verify dry standards and air quality before employees and customers return.',
+      },
+    ],
+    faqs: [
+      {
+        q: 'Can our business remain open during commercial water restoration?',
+        a: 'In many situations, yes. We utilize containment barriers and negative air scrubbers to isolate damaged areas, allowing your business to maintain operations safely in unaffected areas.',
+      },
+      {
+        q: 'Do you service large industrial facilities in the Kent Valley?',
+        a: 'Yes. Kent has major warehouse, logistics, and manufacturing hubs. Our commercial equipment is specifically scaled to handle large-scale water extraction and drying across extensive square footage.',
+      },
+      {
+        q: 'How fast can you mobilize for a commercial water emergency?',
+        a: 'We understand that commercial downtime directly costs money. Call (253) 523-3921 right away to speak with our team and deploy emergency commercial restoration equipment.',
+      },
+    ],
+    relatedServiceSlugs: ['water-damage-restoration', 'water-removal', 'structural-drying', 'flood-damage-cleanup'],
+  },
 ];
 
 export const SERVICE_AREAS: ServiceAreaInfo[] = [
   {
     slug: 'kent-wa',
-    urlSlug: 'kent',
+    urlSlug: 'kent-wa',
     name: 'Kent, WA',
     shortName: 'Kent',
     description:
@@ -402,7 +646,7 @@ export const SERVICE_AREAS: ServiceAreaInfo[] = [
   },
   {
     slug: 'renton-wa',
-    urlSlug: 'renton',
+    urlSlug: 'renton-wa',
     name: 'Renton, WA',
     shortName: 'Renton',
     description:
@@ -411,7 +655,7 @@ export const SERVICE_AREAS: ServiceAreaInfo[] = [
   },
   {
     slug: 'auburn-wa',
-    urlSlug: 'auburn',
+    urlSlug: 'auburn-wa',
     name: 'Auburn, WA',
     shortName: 'Auburn',
     description:
@@ -420,7 +664,7 @@ export const SERVICE_AREAS: ServiceAreaInfo[] = [
   },
   {
     slug: 'covington-wa',
-    urlSlug: 'covington',
+    urlSlug: 'covington-wa',
     name: 'Covington, WA',
     shortName: 'Covington',
     description:
@@ -429,7 +673,7 @@ export const SERVICE_AREAS: ServiceAreaInfo[] = [
   },
   {
     slug: 'federal-way-wa',
-    urlSlug: 'federal-way',
+    urlSlug: 'federal-way-wa',
     name: 'Federal Way, WA',
     shortName: 'Federal Way',
     description:
@@ -438,7 +682,7 @@ export const SERVICE_AREAS: ServiceAreaInfo[] = [
   },
   {
     slug: 'tukwila-wa',
-    urlSlug: 'tukwila',
+    urlSlug: 'tukwila-wa',
     name: 'Tukwila, WA',
     shortName: 'Tukwila',
     description:
@@ -447,7 +691,7 @@ export const SERVICE_AREAS: ServiceAreaInfo[] = [
   },
   {
     slug: 'seatac-wa',
-    urlSlug: 'seatac',
+    urlSlug: 'seatac-wa',
     name: 'SeaTac, WA',
     shortName: 'SeaTac',
     description:
@@ -456,7 +700,7 @@ export const SERVICE_AREAS: ServiceAreaInfo[] = [
   },
   {
     slug: 'des-moines-wa',
-    urlSlug: 'des-moines',
+    urlSlug: 'des-moines-wa',
     name: 'Des Moines, WA',
     shortName: 'Des Moines',
     description:
@@ -465,7 +709,7 @@ export const SERVICE_AREAS: ServiceAreaInfo[] = [
   },
   {
     slug: 'maple-valley-wa',
-    urlSlug: 'maple-valley',
+    urlSlug: 'maple-valley-wa',
     name: 'Maple Valley, WA',
     shortName: 'Maple Valley',
     description:
@@ -474,7 +718,7 @@ export const SERVICE_AREAS: ServiceAreaInfo[] = [
   },
   {
     slug: 'burien-wa',
-    urlSlug: 'burien',
+    urlSlug: 'burien-wa',
     name: 'Burien, WA',
     shortName: 'Burien',
     description:
@@ -489,6 +733,13 @@ export function getService(slug: string): ServiceInfo | undefined {
 
 export function getServiceArea(slug: string): ServiceAreaInfo | undefined {
   return SERVICE_AREAS.find((a) => a.slug === slug);
+}
+
+export const MAIN_SERVICE_AREA =
+  SERVICE_AREAS.find((a) => a.slug === BUSINESS.primaryLocationSlug) ?? SERVICE_AREAS[0];
+
+export function getServiceUrl(serviceSlug: string): string {
+  return `/${serviceSlug}-${MAIN_SERVICE_AREA.urlSlug}`;
 }
 
 export function buildServiceAreaUrl(serviceSlug: string, areaSlug: string): string {

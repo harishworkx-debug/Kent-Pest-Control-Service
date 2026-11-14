@@ -99,15 +99,19 @@ export function buildServiceSchema(service: ServiceInfo, area?: ServiceAreaInfo)
 }
 
 export function buildBreadcrumbSchema(items: { name: string; url: string }[]) {
+  const baseUrl = BUSINESS.website.replace(/\/$/, '');
   return {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
-    itemListElement: items.map((item, index) => ({
-      '@type': 'ListItem',
-      position: index + 1,
-      name: item.name,
-      item: `${BUSINESS.website}${item.url}`,
-    })),
+    itemListElement: items.map((item, index) => {
+      const path = item.url.startsWith('/') ? item.url : `/${item.url}`;
+      return {
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.name,
+        item: `${baseUrl}${path}`,
+      };
+    }),
   };
 }
 

@@ -19,7 +19,7 @@ export function PrivacyPolicyPage({ navigate }: PrivacyPolicyPageProps) {
     <>
       <SEO
         title="Privacy Policy | Kent Pest Control Service"
-        description="Privacy policy for Kent Pest Control Service website. Learn how we handle information on our water damage restoration website."
+        description="Privacy policy for Kent Pest Control Service website detailing how we handle information on our water damage restoration website."
         canonical="/privacy-policy"
         jsonLd={jsonLd}
       />

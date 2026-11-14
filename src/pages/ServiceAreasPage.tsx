@@ -2,7 +2,7 @@ import { SEO } from '@/components/SEO';
 import { PageHero } from '@/components/PageHero';
 import { FinalCTA } from '@/components/FinalCTA';
 import { FAQSection } from '@/components/FAQSection';
-import { SERVICE_AREAS, SERVICES, BUSINESS } from '@/data/business';
+import { SERVICE_AREAS, SERVICES, BUSINESS, getServiceUrl } from '@/data/business';
 import { buildBreadcrumbSchema, buildFAQSchema } from '@/data/schema';
 import { ArrowRight, MapPin } from 'lucide-react';
 
@@ -46,8 +46,8 @@ export function ServiceAreasPage({ navigate }: ServiceAreasPageProps) {
             <h2 className="section-title">Communities We Serve</h2>
             <p className="mt-4 text-lg text-neutral-600 text-pretty">
               Our primary service area is Kent, WA. We also extend our water damage restoration services
-              to neighboring communities in the South King County region. Select your city to learn more
-              about available services.
+              to neighboring communities in the South King County region. Select your city to view
+              available services.
             </p>
           </div>
 
@@ -99,7 +99,7 @@ export function ServiceAreasPage({ navigate }: ServiceAreasPageProps) {
             {SERVICES.map((service) => (
               <button
                 key={service.slug}
-                onClick={() => navigate(`/services/${service.slug}`)}
+                onClick={() => navigate(getServiceUrl(service.slug))}
                 className="rounded-full bg-neutral-50 px-5 py-2.5 text-sm font-medium text-navy-600 ring-1 ring-neutral-200/60 transition-all hover:bg-brand-50 hover:text-brand-500 hover:ring-brand-200"
               >
                 {service.name}

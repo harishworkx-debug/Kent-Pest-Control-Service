@@ -3,7 +3,7 @@ import { PageHero } from '@/components/PageHero';
 import { FinalCTA } from '@/components/FinalCTA';
 import { FAQSection } from '@/components/FAQSection';
 import { CallButton } from '@/components/CallButton';
-import { BUSINESS, SERVICES, SERVICE_AREAS, getService } from '@/data/business';
+import { BUSINESS, SERVICES, SERVICE_AREAS, getService, getServiceUrl } from '@/data/business';
 import {
   buildBreadcrumbSchema,
   buildServiceSchema,
@@ -27,6 +27,7 @@ export function ServiceDetailPage({ serviceSlug, navigate }: ServiceDetailPagePr
     .map((slug) => getService(slug))
     .filter((s): s is NonNullable<typeof s> => s !== undefined);
 
+  const serviceUrl = getServiceUrl(service.slug);
   const seoTitle = `${service.name} in Kent, WA | Kent Pest Control Service`;
   const seoDesc = `${service.description} Call ${BUSINESS.phone} for professional ${service.name.toLowerCase()} services in Kent, WA and surrounding communities.`;
 
@@ -35,7 +36,7 @@ export function ServiceDetailPage({ serviceSlug, navigate }: ServiceDetailPagePr
     buildBreadcrumbSchema([
       { name: 'Home', url: '/' },
       { name: 'Services', url: '/services' },
-      { name: service.name, url: `/services/${service.slug}` },
+      { name: service.name, url: serviceUrl },
     ]),
     buildFAQSchema(service.faqs),
   ];
@@ -45,7 +46,7 @@ export function ServiceDetailPage({ serviceSlug, navigate }: ServiceDetailPagePr
       <SEO
         title={seoTitle}
         description={seoDesc}
-        canonical={`/services/${service.slug}`}
+        canonical={serviceUrl}
         jsonLd={jsonLd}
       />
 
@@ -56,7 +57,7 @@ export function ServiceDetailPage({ serviceSlug, navigate }: ServiceDetailPagePr
         breadcrumbItems={[
           { name: 'Home', url: '/' },
           { name: 'Services', url: '/services' },
-          { name: service.name, url: `/services/${service.slug}` },
+          { name: service.name, url: serviceUrl },
         ]}
         navigate={navigate}
       />
@@ -164,24 +165,29 @@ export function ServiceDetailPage({ serviceSlug, navigate }: ServiceDetailPagePr
             <h2 className="section-title">{service.name} Service Areas</h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-neutral-600 text-pretty">
               {service.name} is available in Kent, WA and surrounding Washington communities. Select your
-              city to learn more about {service.name.toLowerCase()} in your area.
+              city to view {service.name.toLowerCase()} services in your area.
             </p>
           </div>
 
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {SERVICE_AREAS.map((area) => {
               const url = `/${service.slug}-${area.urlSlug}`;
+              const isCurrent = area.slug === BUSINESS.primaryLocationSlug;
               return (
                 <button
                   key={area.slug}
                   onClick={() => navigate(url)}
-                  className="card group flex items-center justify-between p-5 text-left"
+                  className={`card group flex items-center justify-between p-5 text-left ${
+                    isCurrent ? 'ring-2 ring-brand-500 bg-brand-50/20' : ''
+                  }`}
                 >
                   <div>
                     <h3 className="text-base font-bold text-navy-700 group-hover:text-brand-500">
                       {service.name} in {area.name}
                     </h3>
-                    <p className="mt-0.5 text-sm text-neutral-500">Available in {area.shortName}</p>
+                    <p className="mt-0.5 text-sm text-neutral-500">
+                      {isCurrent ? 'Primary Location (Current)' : `Available in ${area.shortName}`}
+                    </p>
                   </div>
                   <ArrowRight className="h-5 w-5 shrink-0 text-neutral-400 transition-all group-hover:translate-x-1 group-hover:text-aqua-600" />
                 </button>
@@ -203,7 +209,7 @@ export function ServiceDetailPage({ serviceSlug, navigate }: ServiceDetailPagePr
             {relatedServices.map((relService) => (
               <button
                 key={relService.slug}
-                onClick={() => navigate(`/services/${relService.slug}`)}
+                onClick={() => navigate(getServiceUrl(relService.slug))}
                 className="card group p-6 text-left"
               >
                 <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-aqua-50">

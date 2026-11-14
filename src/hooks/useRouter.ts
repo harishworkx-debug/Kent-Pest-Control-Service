@@ -9,8 +9,12 @@ export function useRouter() {
     return () => window.removeEventListener('popstate', onPopState);
   }, []);
 
-  const navigate = useCallback((to: string) => {
-    window.history.pushState({}, '', to);
+  const navigate = useCallback((to: string, replace = false) => {
+    if (replace) {
+      window.history.replaceState({}, '', to);
+    } else {
+      window.history.pushState({}, '', to);
+    }
     setPath(to);
     window.scrollTo(0, 0);
   }, []);

@@ -153,7 +153,7 @@ function TrustBar() {
 
 function StatsSection() {
   const stats = [
-    { icon: Droplets, value: '6', label: 'Restoration Services' },
+    { icon: Droplets, value: '10', label: 'Restoration Services' },
     { icon: MapPin, value: '10', label: 'WA Communities Served' },
     { icon: Phone, value: '1 Call', label: 'Direct Phone Contact' },
     { icon: Shield, value: 'Kent, WA', label: 'Local Business Base' },
@@ -441,7 +441,7 @@ function ServiceAreasSection({ navigate }: { navigate: (to: string) => void }) {
           <h2 className="section-title">Communities We Serve</h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-neutral-600 text-pretty">
             Based in Kent, WA, we provide water damage restoration services to Kent and surrounding
-            Washington communities. Select your city to learn more about available services in your area.
+            Washington communities. Select your city to view available services in your area.
           </p>
         </div>
 
@@ -535,7 +535,7 @@ function ResidentialCommercialSection() {
 const homeFaqs = [
   {
     q: 'What services does Kent Pest Control Service offer?',
-    a: 'Kent Pest Control Service provides water damage restoration services, including water removal, water extraction, structural drying, flood damage cleanup, and water damage repair. We serve Kent, WA and surrounding communities. Call (253) 523-3921 to discuss your specific needs.',
+    a: 'Kent Pest Control Service provides 10 comprehensive water damage restoration services, including water damage restoration, water removal, water extraction, structural drying, flood damage cleanup, water damage repair, sewage backup cleanup, basement flood cleanup, burst pipe water cleanup, and commercial water damage restoration. We serve Kent, WA and surrounding communities. Call (253) 523-3921 to discuss your specific needs.',
   },
   {
     q: 'Where is Kent Pest Control Service located?',

@@ -1,6 +1,6 @@
 import { Phone, MapPin, Globe, Droplets, Clock } from 'lucide-react';
 import { Logo } from '@/components/Logo';
-import { BUSINESS, SERVICES, SERVICE_AREAS } from '@/data/business';
+import { BUSINESS, SERVICES, SERVICE_AREAS, getServiceUrl } from '@/data/business';
 
 interface FooterProps {
   navigate: (to: string) => void;
@@ -36,7 +36,7 @@ export function Footer({ navigate }: FooterProps) {
               {SERVICES.map((service) => (
                 <li key={service.slug}>
                   <button
-                    onClick={() => handleNav(`/services/${service.slug}`)}
+                    onClick={() => handleNav(getServiceUrl(service.slug))}
                     className="text-sm text-neutral-300 transition-colors hover:text-white"
                   >
                     {service.name}

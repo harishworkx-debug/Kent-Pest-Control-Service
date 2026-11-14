@@ -1,5 +1,5 @@
 import { Phone, ArrowRight, MapPin } from 'lucide-react';
-import { BUSINESS, SERVICES, SERVICE_AREAS } from '@/data/business';
+import { BUSINESS, SERVICES, SERVICE_AREAS, getServiceUrl } from '@/data/business';
 import type { ServiceInfo, ServiceAreaInfo } from '@/data/business';
 
 interface ServiceCardProps {
@@ -10,7 +10,7 @@ interface ServiceCardProps {
 export function ServiceCard({ service, navigate }: ServiceCardProps) {
   return (
     <div
-      onClick={() => navigate(`/services/${service.slug}`)}
+      onClick={() => navigate(getServiceUrl(service.slug))}
       className="card group flex cursor-pointer flex-col overflow-hidden"
     >
       <div className="relative h-52 overflow-hidden">
@@ -30,7 +30,7 @@ export function ServiceCard({ service, navigate }: ServiceCardProps) {
         <p className="text-sm leading-relaxed text-neutral-600 text-pretty">{service.description}</p>
 
         <div className="mt-5 flex items-center gap-1.5 text-sm font-semibold text-brand-500 transition-colors group-hover:text-brand-600">
-          Learn about {service.shortName}
+          View Service
           <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
         </div>
 

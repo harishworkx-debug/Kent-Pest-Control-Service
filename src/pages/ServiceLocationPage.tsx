@@ -9,6 +9,7 @@ import {
   SERVICE_AREAS,
   getService,
   getServiceArea,
+  getServiceUrl,
 } from '@/data/business';
 import {
   buildBreadcrumbSchema,
@@ -52,7 +53,7 @@ export function ServiceLocationPage({ serviceSlug, areaSlug, navigate }: Service
     buildBreadcrumbSchema([
       { name: 'Home', url: '/' },
       { name: 'Services', url: '/services' },
-      { name: service.name, url: `/services/${service.slug}` },
+      { name: service.name, url: getServiceUrl(service.slug) },
       { name: `${service.name} in ${area.name}`, url: canonical },
     ]),
     buildFAQSchema(faqs),
@@ -74,7 +75,7 @@ export function ServiceLocationPage({ serviceSlug, areaSlug, navigate }: Service
         breadcrumbItems={[
           { name: 'Home', url: '/' },
           { name: 'Services', url: '/services' },
-          { name: service.name, url: `/services/${service.slug}` },
+          { name: service.name, url: getServiceUrl(service.slug) },
           { name: area.name, url: canonical },
         ]}
         navigate={navigate}

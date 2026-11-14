@@ -2,7 +2,7 @@ import { SEO } from '@/components/SEO';
 import { PageHero } from '@/components/PageHero';
 import { FinalCTA } from '@/components/FinalCTA';
 import { CallButton } from '@/components/CallButton';
-import { BUSINESS, SERVICES, SERVICE_AREAS } from '@/data/business';
+import { BUSINESS, SERVICES, SERVICE_AREAS, getServiceUrl } from '@/data/business';
 import { buildOrganizationSchema, buildBreadcrumbSchema, buildLocalBusinessSchema } from '@/data/schema';
 import { Phone, MapPin, Droplets, Wind, Hammer, Shield, Users, Wrench } from 'lucide-react';
 
@@ -24,7 +24,7 @@ export function AboutPage({ navigate }: AboutPageProps) {
     <>
       <SEO
         title="About Us | Kent Pest Control Service — Kent, WA"
-        description="Learn about Kent Pest Control Service, a water damage restoration company based in Kent, WA. Serving Kent and surrounding Washington communities with professional restoration services."
+        description="Kent Pest Control Service provides professional water damage restoration in Kent, WA. Serving Kent and surrounding Washington communities with comprehensive restoration services."
         canonical="/about"
         jsonLd={jsonLd}
       />
@@ -99,7 +99,7 @@ export function AboutPage({ navigate }: AboutPageProps) {
             {SERVICES.map((service) => (
               <button
                 key={service.slug}
-                onClick={() => navigate(`/services/${service.slug}`)}
+                onClick={() => navigate(getServiceUrl(service.slug))}
                 className="card group p-6 text-left"
               >
                 <h3 className="text-lg font-bold text-navy-700 group-hover:text-brand-500">
@@ -223,7 +223,7 @@ export function AboutPage({ navigate }: AboutPageProps) {
 
       <FinalCTA
         title="Call to Discuss Your Restoration Needs"
-        description="Contact Kent Pest Control Service to learn more about our water damage restoration services and how we can help with your property."
+        description="Contact Kent Pest Control Service to discuss our water damage restoration services and how we can help with your property."
       />
     </>
   );
