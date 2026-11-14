@@ -79,8 +79,8 @@ export function ServiceAreasPage({ navigate }: ServiceAreasPageProps) {
                   {area.description}
                 </p>
                 <div className="mt-4 flex items-center gap-1.5 text-sm font-semibold text-brand-500">
-                  View services in {area.shortName}
-                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  Water Damage Restoration in {area.shortName}
+                  <ArrowRight className="h-4 w-4 shrink-0 transition-transform group-hover:translate-x-1" />
                 </div>
               </a>
             ))}

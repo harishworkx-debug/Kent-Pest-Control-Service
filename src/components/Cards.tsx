@@ -35,8 +35,8 @@ export function ServiceCard({ service, navigate }: ServiceCardProps) {
         <p className="text-sm leading-relaxed text-neutral-600 text-pretty">{service.description}</p>
 
         <div className="mt-5 flex items-center gap-1.5 text-sm font-semibold text-brand-500 transition-colors group-hover:text-brand-600">
-          View Service
-          <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+          {service.name}
+          <ArrowRight className="h-4 w-4 shrink-0 transition-transform group-hover:translate-x-1" />
         </div>
 
         <div
