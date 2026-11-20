@@ -13,6 +13,8 @@ import { NotFoundPage } from '@/pages/NotFoundPage';
 import { ServiceDetailPage } from '@/pages/ServiceDetailPage';
 import { ServiceAreaPage } from '@/pages/ServiceAreaPage';
 import { ServiceLocationPage } from '@/pages/ServiceLocationPage';
+import { USE_LANDING_PAGE_AS_HOME } from '@/siteMode';
+import { StandaloneLandingPage } from '@/standalone-landing/StandaloneLandingPage';
 import {
   SERVICES,
   SERVICE_AREAS,
@@ -51,6 +53,15 @@ function App() {
       }
     }
   }, [path, navigate]);
+
+  // Standalone Landing Page Switcher Logic
+  const isStandaloneLanding =
+    path === '/home-page' ||
+    (USE_LANDING_PAGE_AS_HOME && (path === '/' || path === '/water-damage-restoration-kent-wa'));
+
+  if (isStandaloneLanding) {
+    return <StandaloneLandingPage navigate={navigate} currentPath={path} />;
+  }
 
   const renderPage = () => {
     // Static routes
