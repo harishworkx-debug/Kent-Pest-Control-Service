@@ -54,13 +54,13 @@ export function LandingContact({ initialService = '' }: LandingContactProps) {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto">
           <div className="inline-flex items-center gap-2 rounded-full border border-aqua-400/20 bg-aqua-950/40 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-aqua-300">
-            Emergency Dispatch & Estimates
+            Residential Emergency Dispatch
           </div>
           <h2 className="mt-4 font-display text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl">
-            Request Rapid Water Damage Inspection
+            Request Residential Water Damage Inspection
           </h2>
           <p className="mt-4 text-base text-neutral-300 sm:text-lg text-pretty">
-            Immediate phone consultation or local dispatch across Kent and nearby communities. No forms delayed in queues.
+            Immediate phone consultation or local residential dispatch across Kent and nearby communities. Exclusively for homeowners.
           </p>
         </div>
 
@@ -73,10 +73,10 @@ export function LandingContact({ initialService = '' }: LandingContactProps) {
               </span>
 
               <h3 className="mt-4 text-2xl font-bold text-white">
-                Direct Emergency Phone Line
+                Direct Homeowner Phone Line
               </h3>
               <p className="mt-2 text-sm text-neutral-300 leading-relaxed">
-                For active plumbing ruptures, standing floodwater, or rapid ceiling leaks, direct phone calls bypass form review and activate immediate dispatch.
+                For active plumbing ruptures, standing floodwater, or rapid ceiling leaks, direct phone calls bypass form review and activate immediate dispatch assistance.
               </p>
 
               <div className="mt-6">
@@ -87,6 +87,9 @@ export function LandingContact({ initialService = '' }: LandingContactProps) {
                   <Phone className="h-6 w-6 fill-navy-950" />
                   <span>{LANDING_DATA.phone}</span>
                 </a>
+                <p className="mt-2 text-[10px] text-neutral-400 text-center">
+                  *24/7 routing and emergency dispatch response times are subject to local technician availability and regional scheduling and are not guaranteed.
+                </p>
               </div>
 
               <div className="mt-6 pt-6 border-t border-navy-800 space-y-4 text-sm text-neutral-300">
@@ -109,8 +112,8 @@ export function LandingContact({ initialService = '' }: LandingContactProps) {
                 <div className="flex items-start gap-3">
                   <ShieldCheck className="h-5 w-5 shrink-0 text-aqua-400 mt-0.5" />
                   <div>
-                    <strong className="block text-white">Service Territory</strong>
-                    <span className="text-xs text-neutral-400">Kent, Renton, Auburn, Covington, Federal Way, Tukwila, SeaTac & Burien</span>
+                    <strong className="block text-white">Residential Service Territory</strong>
+                    <span className="text-xs text-neutral-400">Exclusively for residential properties in Kent, Renton, Auburn, Covington, Federal Way, Tukwila, SeaTac & Burien</span>
                   </div>
                 </div>
               </div>
@@ -166,10 +169,10 @@ export function LandingContact({ initialService = '' }: LandingContactProps) {
               ) : (
                 <form onSubmit={handleSubmit} noValidate>
                   <h3 className="text-xl font-bold text-white">
-                    Submit Property Service Request
+                    Submit Residential Service Request
                   </h3>
                   <p className="mt-1 text-xs text-neutral-400">
-                    Provide details regarding your water intrusion for prompt dispatcher review.
+                    Provide details regarding your home's water intrusion for prompt dispatcher review. (Homeowners only).
                   </p>
 
                   <div className="mt-6 grid gap-4 sm:grid-cols-2">
@@ -233,7 +236,7 @@ export function LandingContact({ initialService = '' }: LandingContactProps) {
                   {/* Property Location */}
                   <div className="mt-4">
                     <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-300 mb-1.5">
-                      Property Address or City (Kent / King County) *
+                      Residential Property Address or City (Kent / King County) *
                     </label>
                     <input
                       type="text"
@@ -252,7 +255,7 @@ export function LandingContact({ initialService = '' }: LandingContactProps) {
                   {/* Details / Scope */}
                   <div className="mt-4">
                     <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-300 mb-1.5">
-                      Brief Description of Water Issue (Optional)
+                      Brief Description of Residential Water Issue (Optional)
                     </label>
                     <textarea
                       rows={3}
@@ -280,7 +283,7 @@ export function LandingContact({ initialService = '' }: LandingContactProps) {
                       )}
                     </button>
                     <p className="mt-2 text-center text-xs text-neutral-400">
-                      Your phone number is only used to coordinate on-site inspection and response logistics.
+                      Exclusively for residential properties. All calls and form inquiries are routed to independent local service contractors.
                     </p>
                   </div>
                 </form>

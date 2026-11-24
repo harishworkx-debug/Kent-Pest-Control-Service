@@ -14,7 +14,7 @@ export function LandingAreas() {
             Service Areas in Kent, WA & South King County
           </h2>
           <p className="mt-4 text-base text-neutral-300 sm:text-lg text-pretty">
-            Centrally based on 5th Ave S in downtown Kent, providing prompt emergency dispatch to homes and facilities across South King County.
+            Centrally based on 5th Ave S in downtown Kent, providing prompt emergency dispatch to homes and residential properties across South King County.
           </p>
         </div>
 

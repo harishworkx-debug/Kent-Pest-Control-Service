@@ -42,13 +42,13 @@ export function LandingServices({ onSelectService }: LandingServicesProps) {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto">
           <div className="inline-flex items-center gap-2 rounded-full border border-aqua-400/20 bg-aqua-950/40 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-aqua-300">
-            Emergency & Structural Services
+            Residential Homeowner Services
           </div>
           <h2 className="mt-4 font-display text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl">
-            Restoration Services in Kent, WA
+            Residential Water Restoration in Kent, WA
           </h2>
           <p className="mt-4 text-base text-neutral-300 sm:text-lg text-pretty">
-            Targeted moisture removal and drying procedures engineered for residential and commercial structures throughout Kent and King County.
+            Targeted moisture removal and structural drying procedures engineered exclusively for single-family homes, townhouses, and residential properties throughout Kent and King County.
           </p>
         </div>
 
@@ -81,7 +81,7 @@ export function LandingServices({ onSelectService }: LandingServicesProps) {
                 {/* Benefit Checklist */}
                 <div className="mt-5 border-t border-navy-800 pt-5">
                   <p className="text-xs font-semibold uppercase tracking-wider text-neutral-400">
-                    Key Deliverables
+                    Homeowner Deliverables
                   </p>
                   <ul className="mt-3 space-y-2 text-xs text-neutral-300">
                     {service.features.map((feat, idx) => (
@@ -115,9 +115,15 @@ export function LandingServices({ onSelectService }: LandingServicesProps) {
         {/* Global Urgent Call Banner */}
         <div className="mt-12 rounded-2xl border border-aqua-400/30 bg-gradient-to-r from-navy-950 via-navy-900 to-navy-950 p-6 sm:p-8 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-6">
           <div>
+            <div className="inline-block rounded-full bg-aqua-400/10 px-2.5 py-0.5 text-[11px] font-bold text-aqua-300 border border-aqua-400/20 mb-2">
+              For Residential Homeowners
+            </div>
             <h3 className="text-xl font-bold text-white">Need Immediate Water Extraction in Kent?</h3>
-            <p className="mt-1 text-sm text-neutral-300">
-              Standing water causes structural degradation and microbial colonization within 24–48 hours. Speak directly with a local dispatch technician.
+            <p className="mt-1 text-sm text-neutral-300 max-w-xl">
+              Standing water causes structural degradation and microbial colonization within 24–48 hours. Speak directly with a local residential dispatch coordinator.
+            </p>
+            <p className="mt-2 text-[11px] text-neutral-400">
+              *24/7 inquiry routing and dispatch response times are subject to local technician availability and regional scheduling.
             </p>
           </div>
           <a

@@ -1,4 +1,4 @@
-import { Phone, ArrowDown, ShieldCheck, Clock, MapPin, CheckCircle, Droplet } from 'lucide-react';
+import { Phone, ArrowDown, Clock, MapPin, CheckCircle, Droplet, Home } from 'lucide-react';
 import { LANDING_DATA } from './landingData';
 
 export function LandingHero() {
@@ -21,10 +21,10 @@ export function LandingHero() {
         <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
           {/* Main Hero Copy */}
           <div className="lg:col-span-7">
-            {/* Location Pill */}
+            {/* Residential Focus Pill */}
             <div className="inline-flex items-center gap-2 rounded-full border border-aqua-400/30 bg-aqua-950/60 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-aqua-300 backdrop-blur-sm">
-              <MapPin className="h-3.5 w-3.5 text-aqua-400" />
-              <span>Direct Emergency Dispatch • Kent, WA & King County</span>
+              <Home className="h-3.5 w-3.5 text-aqua-400" />
+              <span>Residential Homeowner Assistance • Kent, WA & King County</span>
             </div>
 
             {/* Strict H1: [Niche] in [Location, State] */}
@@ -32,9 +32,9 @@ export function LandingHero() {
               Water Damage Restoration in Kent, WA
             </h1>
 
-            {/* Subtitle / Value Proposition */}
+            {/* Subtitle / Value Proposition (Strictly Residential) */}
             <p className="mt-6 text-lg leading-relaxed text-neutral-300 sm:text-xl text-pretty max-w-2xl">
-              Rapid on-site emergency water extraction, commercial dehumidification, and structural drying. We stabilize moisture in drywall, flooring, and crawl spaces across Kent and South King County before structural rot or mold takes hold.
+              Rapid on-site emergency water extraction, structural dehumidification, and moisture drying for homeowners. We stabilize moisture in residential drywall, flooring, and crawl spaces across Kent and South King County before structural rot or mold takes hold.
             </p>
 
             {/* Primary Action Buttons */}
@@ -52,25 +52,28 @@ export function LandingHero() {
                 onClick={scrollToContact}
                 className="inline-flex items-center justify-center gap-2 rounded-xl border border-neutral-700 bg-navy-800/80 px-6 py-4 text-base font-semibold text-neutral-100 shadow-sm transition-all duration-200 hover:border-neutral-500 hover:bg-navy-700 active:scale-95"
               >
-                <span>Request Rapid Inspection</span>
+                <span>Request Home Inspection</span>
                 <ArrowDown className="h-4 w-4 text-aqua-400" />
               </a>
             </div>
 
-            {/* Quick Location Snapshot */}
+            {/* Quick Location Snapshot with Required Disclaimer */}
             <div className="mt-8 flex flex-wrap items-center gap-y-2 gap-x-6 text-xs text-neutral-400">
               <span className="flex items-center gap-1.5">
                 <Clock className="h-4 w-4 text-aqua-400" />
-                <span>24/7 Immediate Dispatch</span>
+                <span>Emergency Inquiries Received 24/7*</span>
               </span>
               <span className="flex items-center gap-1.5">
                 <MapPin className="h-4 w-4 text-aqua-400" />
                 <span>Service Base: 327 5th Ave S, Kent, WA 98032</span>
               </span>
             </div>
+            <p className="mt-2 text-[11px] text-neutral-400 italic">
+              *Notice: 24/7 service, response times, and emergency dispatch are subject to local technician availability and regional scheduling and are not guaranteed. Exclusively for residential properties.
+            </p>
           </div>
 
-          {/* Hero Feature Box / Trust Card */}
+          {/* Hero Feature Box / Trust Card (Zero Unverifiable Claims) */}
           <div className="lg:col-span-5">
             <div className="rounded-2xl border border-navy-700/80 bg-navy-900/90 p-6 sm:p-8 shadow-2xl backdrop-blur-md">
               <div className="flex items-center justify-between border-b border-navy-800 pb-5">
@@ -79,39 +82,39 @@ export function LandingHero() {
                     <Droplet className="h-6 w-6" />
                   </div>
                   <div>
-                    <h2 className="text-base font-bold text-white">Emergency Response Standard</h2>
-                    <p className="text-xs text-neutral-400">Kent & South King County</p>
+                    <h2 className="text-base font-bold text-white">Residential Mitigation Standards</h2>
+                    <p className="text-xs text-neutral-400">Exclusively for Kent & King County Homeowners</p>
                   </div>
                 </div>
-                <span className="rounded-full bg-emerald-500/20 px-2.5 py-1 text-xs font-semibold text-emerald-400 border border-emerald-500/30">
-                  Active Dispatch
+                <span className="rounded-full bg-aqua-500/10 px-2.5 py-1 text-xs font-semibold text-aqua-400 border border-aqua-500/20">
+                  Homeowners Only
                 </span>
               </div>
 
-              {/* 4 Trust Criteria */}
+              {/* 4 Verifiable Criteria */}
               <ul className="mt-6 space-y-4 text-sm text-neutral-200">
                 <li className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 shrink-0 text-aqua-400 mt-0.5" />
                   <span>
-                    <strong className="text-white">IICRC S500 Standards:</strong> Comprehensive moisture extraction and structural drying protocols.
+                    <strong className="text-white">Structured Moisture Extraction:</strong> Comprehensive water removal and drying protocols for residential home framing.
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 shrink-0 text-aqua-400 mt-0.5" />
                   <span>
-                    <strong className="text-white">Local Kent Dispatch:</strong> Positioned near Hwy 167 & WA-516 for rapid Valley & East Hill arrival.
+                    <strong className="text-white">Local Kent Dispatch:</strong> Positioned near Hwy 167 & WA-516 for rapid Valley & East Hill residential arrival.
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 shrink-0 text-aqua-400 mt-0.5" />
                   <span>
-                    <strong className="text-white">Insurance Assistance:</strong> Daily psychrometric readings, drying logs & photo documentation.
+                    <strong className="text-white">Homeowner Claim Support:</strong> Daily psychrometric readings, drying logs & photo documentation for adjusters.
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 shrink-0 text-aqua-400 mt-0.5" />
                   <span>
-                    <strong className="text-white">Commercial Drying Equipment:</strong> LGR industrial dehumidifiers, air movers & thermal cameras.
+                    <strong className="text-white">Advanced Drying Systems:</strong> High-capacity LGR dehumidifiers, structural air movers & thermal moisture sensors.
                   </span>
                 </li>
               </ul>
@@ -119,7 +122,7 @@ export function LandingHero() {
               {/* Direct Call Banner inside Card */}
               <div className="mt-8 rounded-xl bg-navy-950/80 p-4 border border-navy-800 flex items-center justify-between">
                 <div>
-                  <p className="text-xs font-medium text-neutral-400">Direct Technician Line</p>
+                  <p className="text-xs font-medium text-neutral-400">Homeowner Dispatch Line</p>
                   <p className="text-base font-bold text-white">{LANDING_DATA.phone}</p>
                 </div>
                 <a
@@ -129,6 +132,9 @@ export function LandingHero() {
                   Call Now
                 </a>
               </div>
+              <p className="mt-2 text-[10px] text-neutral-400 text-center">
+                *Calls routed to independent local service contractors. Work not guaranteed by this directory.
+              </p>
             </div>
           </div>
         </div>

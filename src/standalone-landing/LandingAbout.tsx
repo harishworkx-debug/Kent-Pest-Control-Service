@@ -1,4 +1,4 @@
-import { ShieldCheck, CloudRain, ThermometerSnowflake, Home, CheckCircle2 } from 'lucide-react';
+import { CloudRain, ThermometerSnowflake, Home, CheckCircle2 } from 'lucide-react';
 import { LANDING_DATA } from './landingData';
 
 export function LandingAbout() {
@@ -24,7 +24,7 @@ export function LandingAbout() {
                   <div>
                     <h4 className="font-semibold text-white">Green River Valley Moisture</h4>
                     <p className="mt-0.5 text-xs text-neutral-400">
-                      Persistent high ambient humidity in the Kent valley impedes natural evaporation, requiring industrial desiccant or LGR dehumidification to prevent wood rot.
+                      Persistent high ambient humidity in the Kent valley impedes natural evaporation, requiring high-capacity structural dehumidification to prevent wood rot.
                     </p>
                   </div>
                 </div>
@@ -36,7 +36,7 @@ export function LandingAbout() {
                   <div>
                     <h4 className="font-semibold text-white">Winter Freezing Snaps</h4>
                     <p className="mt-0.5 text-xs text-neutral-400">
-                      Uninsulated crawl space supply lines and exterior hose bibs frequently freeze during sub-freezing Arctic winds, causing sudden burst pipes behind finished drywall.
+                      Uninsulated crawl space supply lines and exterior hose bibs frequently freeze during sub-freezing Arctic winds, causing sudden burst pipes behind finished residential drywall.
                     </p>
                   </div>
                 </div>
@@ -48,17 +48,17 @@ export function LandingAbout() {
                   <div>
                     <h4 className="font-semibold text-white">Local Crawl Space Construction</h4>
                     <p className="mt-0.5 text-xs text-neutral-400">
-                      Many Kent homes feature post-and-pier foundations over natural soil that require specialized vapor barrier evaluation and structural joist drying after flooding.
+                      Many Kent homes feature post-and-pier foundations over natural soil that require specialized vapor barrier evaluation and structural joist drying after groundwater pooling.
                     </p>
                   </div>
                 </div>
               </div>
 
-              {/* Regulatory Standards Callout */}
+              {/* Compliance & Standards Callout (Verifiable & Neutral) */}
               <div className="mt-6 rounded-xl border border-navy-700 bg-navy-950/90 p-4">
-                <p className="text-xs font-medium text-neutral-400">Compliance & Regulatory Standards</p>
+                <p className="text-xs font-medium text-neutral-400">Structural Drying Principles</p>
                 <p className="mt-1 text-xs text-neutral-300 leading-relaxed">
-                  Every extraction and structural drying plan follows the Washington State Department of Labor & Industries (L&I) worker safety standards and IICRC S500 guidelines.
+                  Every extraction and structural drying plan follows disciplined psychrometric drying principles to safeguard home framing, drywall, and subfloors.
                 </p>
               </div>
             </div>
@@ -75,11 +75,11 @@ export function LandingAbout() {
             </h2>
 
             <p className="mt-6 text-base leading-relaxed text-neutral-300 sm:text-lg">
-              When water intrudes into a residential or commercial building in Kent, WA, standard surface cleaning is never enough. Moisture rapidly migrates behind baseboards, absorbs upward through drywall via capillary action, and settles into subflooring and framing cavities.
+              When water intrudes into a residential home or townhouse in Kent, WA, standard surface cleaning is never enough. Moisture rapidly migrates behind baseboards, absorbs upward through drywall via capillary action, and settles into subflooring and framing cavities.
             </p>
 
             <p className="mt-4 text-sm leading-relaxed text-neutral-400 sm:text-base">
-              Without rapid high-capacity extraction and balanced psychrometric drying, moisture creates long-term structural weakness and microbial colonization. We deploy calibrated moisture meters, penetrating pin sensors, and infrared thermography to map hidden water corridors throughout your property before executing an engineered dry-out plan.
+              Without rapid high-capacity extraction and balanced psychrometric drying, moisture creates long-term structural weakness and microbial colonization. Local technicians deploy calibrated moisture meters, penetrating pin sensors, and infrared thermography to map hidden water corridors throughout your home before executing an engineered dry-out plan.
             </p>
 
             {/* Checklist */}
@@ -90,7 +90,7 @@ export function LandingAbout() {
               </div>
               <div className="flex items-center gap-2.5">
                 <CheckCircle2 className="h-4 w-4 text-aqua-400 shrink-0" />
-                <span>Direct insurance claim assistance</span>
+                <span>Homeowner insurance claim documentation</span>
               </div>
               <div className="flex items-center gap-2.5">
                 <CheckCircle2 className="h-4 w-4 text-aqua-400 shrink-0" />
@@ -98,19 +98,19 @@ export function LandingAbout() {
               </div>
               <div className="flex items-center gap-2.5">
                 <CheckCircle2 className="h-4 w-4 text-aqua-400 shrink-0" />
-                <span>Hospital-grade antimicrobial sanitization</span>
+                <span>Antimicrobial barrier treatments for homes</span>
               </div>
             </div>
 
-            <div className="mt-8 flex items-center gap-4">
+            <div className="mt-8 flex flex-wrap items-center gap-4">
               <a
                 href={LANDING_DATA.phoneLink}
                 className="inline-flex items-center gap-2 rounded-xl bg-aqua-400 px-5 py-3 text-sm font-bold text-navy-950 shadow-md hover:bg-aqua-300 transition-colors"
               >
-                <span>Speak with an On-Call Technician</span>
+                <span>Speak with a Local Residential Coordinator</span>
               </a>
               <span className="text-xs text-neutral-400">
-                Centrally located at 327 5th Ave S, Kent
+                Centrally routed near 327 5th Ave S, Kent
               </span>
             </div>
           </div>

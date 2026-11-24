@@ -60,8 +60,11 @@ export function StandaloneLandingPage({ navigate, currentPath = '/' }: Standalon
           href={LANDING_DATA.phoneLink}
           className="flex w-full items-center justify-center gap-2.5 rounded-xl bg-gradient-to-r from-aqua-500 to-aqua-400 py-3 text-sm font-bold text-navy-950 shadow-lg shadow-aqua-500/25 active:scale-98"
         >
-          <Phone className="h-4 w-4 fill-navy-950" />
-          <span>Call 24/7 Dispatch: {LANDING_DATA.phone}</span>
+          <Phone className="h-4 w-4 fill-navy-950 shrink-0" />
+          <div className="flex flex-col items-center leading-tight">
+            <span>Call Dispatch: {LANDING_DATA.phone}*</span>
+            <span className="text-[10px] font-normal text-navy-900/80 tracking-wide">*Availability not guaranteed</span>
+          </div>
         </a>
       </div>
     </div>

@@ -10,7 +10,7 @@ const BASE_URL = 'https://www.kent-pestcontrol.com';
 export function LandingSEO({ currentPath = '/' }: LandingSEOProps) {
   useEffect(() => {
     const pageTitle = `${LANDING_DATA.identityTitle} | Emergency Water Extraction & Drying`;
-    const metaDescription = `Professional water damage restoration in Kent, WA. 24/7 rapid water extraction, structural drying, and flood mitigation. Call ${LANDING_DATA.phone} today.`;
+    const metaDescription = `Residential water damage restoration in Kent, WA. Emergency water extraction, structural dehumidification, and moisture mitigation for homeowners. Call ${LANDING_DATA.phone} for immediate dispatch.`;
     const canonicalUrl = currentPath === '/' ? `${BASE_URL}/` : `${BASE_URL}${currentPath}`;
 
     document.title = pageTitle;

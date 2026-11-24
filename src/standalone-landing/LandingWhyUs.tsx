@@ -26,7 +26,7 @@ export function LandingWhyUs() {
             Professional Standards
           </div>
           <h2 className="mt-4 font-display text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl">
-            Why Property Owners Rely on Our Mitigation Standard
+            Why Homeowners Rely on Our Residential Mitigation Standard
           </h2>
           <p className="mt-4 text-base text-neutral-300 sm:text-lg text-pretty">
             Structured protocols, non-destructive moisture diagnostics, and verifiable drying curves to protect structural integrity and property value.
