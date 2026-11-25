@@ -37,7 +37,7 @@ const services = [
   'sewage-backup-cleanup',
   'basement-flood-cleanup',
   'burst-pipe-water-cleanup',
-  'commercial-water-damage',
+  'residential-water-mitigation',
 ];
 
 let xml = `<?xml version="1.0" encoding="UTF-8"?>

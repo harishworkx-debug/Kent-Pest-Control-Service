@@ -40,7 +40,7 @@ export function HomePage({ navigate }: HomePageProps) {
       <WaterDamageCausesSection />
       <WhyChooseUs />
       <ServiceAreasSection navigate={navigate} />
-      <ResidentialCommercialSection />
+      <ResidentialHomeownerSection />
       <HowItWorks />
       <FAQSection faqs={homeFaqs} />
       <FinalCTA />
@@ -198,7 +198,7 @@ function ServicesSection({ navigate }: { navigate: (to: string) => void }) {
           <span className="section-eyebrow">Our Services</span>
           <h2 className="section-title">Water Damage Restoration Services</h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-neutral-600 text-pretty">
-            Professional restoration services for homes and businesses affected by water damage in Kent, WA
+            Professional restoration services for homeowners and residential properties affected by water damage in Kent, WA
             and surrounding communities. Each service is just a phone call away.
           </p>
         </div>
@@ -228,7 +228,7 @@ function RestorationProcessSection() {
     {
       icon: Wind,
       title: 'Structural Drying',
-      description: 'Industrial air movers and dehumidifiers are deployed to dry walls, floors, and building materials thoroughly.',
+      description: 'Specialized air movers and dehumidifiers are deployed to dry walls, floors, and building materials thoroughly.',
     },
     {
       icon: Shield,
@@ -387,7 +387,7 @@ function WhyChooseUs() {
     {
       icon: Wind,
       title: 'Professional Drying Equipment',
-      description: 'We use commercial-grade dehumidifiers, air movers, and moisture detection tools to ensure thorough drying.',
+      description: 'We use high-capacity LGR structural dehumidifiers, air movers, and moisture detection tools to ensure thorough drying.',
     },
     {
       icon: Hammer,
@@ -472,16 +472,15 @@ function ServiceAreasSection({ navigate }: { navigate: (to: string) => void }) {
   );
 }
 
-function ResidentialCommercialSection() {
+function ResidentialHomeownerSection() {
   return (
     <section className="bg-white py-16 lg:py-20">
       <div className="container-page">
         <div className="text-center">
           <span className="section-eyebrow">Who We Serve</span>
-          <h2 className="section-title">Residential & Commercial Restoration</h2>
+          <h2 className="section-title">Dedicated Residential Water Restoration</h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-neutral-600 text-pretty">
-            Water damage affects both homes and businesses. Our restoration services are available to
-            property owners throughout Kent and surrounding communities.
+            Water emergencies disrupt household routines and damage personal belongings. Our restoration services are dedicated exclusively to homeowners and residential properties throughout Kent and surrounding King County communities.
           </p>
         </div>
 
@@ -500,12 +499,9 @@ function ResidentialCommercialSection() {
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-50">
                 <Home className="h-6 w-6 text-brand-500" />
               </div>
-              <h3 className="mt-4 text-xl font-bold text-navy-700">Residential Water Damage</h3>
+              <h3 className="mt-4 text-xl font-bold text-navy-700">Single-Family Homes & Townhomes</h3>
               <p className="mt-2 text-sm leading-relaxed text-neutral-600 text-pretty">
-                Burst pipes, appliance leaks, roof damage, and basement flooding can all cause significant
-                water damage to your home. We provide residential water damage restoration services including
-                water removal, structural drying, and repairs to help restore your home and protect your
-                family's living environment.
+                Burst pipes, appliance line leaks, roof failures, and water intrusion cause severe disruption to living spaces. We provide comprehensive residential water extraction, structural wall cavity drying, and repairs to restore your home and protect your family's living environment.
               </p>
             </div>
           </div>
@@ -513,8 +509,8 @@ function ResidentialCommercialSection() {
           <div className="card overflow-hidden">
             <div className="relative h-48 overflow-hidden">
               <img
-                src="https://images.pexels.com/photos/8961296/pexels-photo-8961296.jpeg?auto=compress&cs=tinysrgb&h=400&w=800"
-                alt="Commercial building interior"
+                src="https://images.pexels.com/photos/4030033/pexels-photo-4030033.jpeg?auto=compress&cs=tinysrgb&h=400&w=800"
+                alt="Residential basement and crawl space water restoration"
                 loading="lazy"
                 className="h-full w-full object-cover"
               />
@@ -522,14 +518,11 @@ function ResidentialCommercialSection() {
             </div>
             <div className="p-6">
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-aqua-50">
-                <Building2 className="h-6 w-6 text-aqua-600" />
+                <Droplets className="h-6 w-6 text-aqua-600" />
               </div>
-              <h3 className="mt-4 text-xl font-bold text-navy-700">Commercial Water Damage</h3>
+              <h3 className="mt-4 text-xl font-bold text-navy-700">Basement & Crawl Space Water Protection</h3>
               <p className="mt-2 text-sm leading-relaxed text-neutral-600 text-pretty">
-                Water damage in commercial properties can disrupt operations and affect inventory, equipment,
-                and workspace. We provide commercial water damage restoration services to help businesses in
-                Kent and surrounding areas address water damage and get back to operating as quickly as
-                possible.
+                Subterranean home spaces in South King County frequently experience foundation seepage, sump pump overflows, and moisture traps. We deploy high-capacity LGR structural dehumidification and extraction to safeguard structural foundations and prevent harmful mold colonization.
               </p>
             </div>
           </div>
@@ -542,7 +535,7 @@ function ResidentialCommercialSection() {
 const homeFaqs = [
   {
     q: 'What services does Kent Pest Control Service offer?',
-    a: 'Kent Pest Control Service provides 10 comprehensive water damage restoration services, including water damage restoration, water removal, water extraction, structural drying, flood damage cleanup, water damage repair, sewage backup cleanup, basement flood cleanup, burst pipe water cleanup, and commercial water damage restoration. We serve Kent, WA and surrounding communities. Call (253) 523-3921 to discuss your specific needs.',
+    a: 'Kent Pest Control Service provides 10 comprehensive residential water damage restoration services, including water damage restoration, water removal, water extraction, structural drying, flood damage cleanup, water damage repair, sewage backup cleanup, basement flood cleanup, burst pipe water cleanup, and residential water mitigation. We serve Kent, WA and surrounding communities. Call (253) 523-3921 to discuss your specific needs.',
   },
   {
     q: 'Where is Kent Pest Control Service located?',

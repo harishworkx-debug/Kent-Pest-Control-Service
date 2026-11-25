@@ -52,7 +52,7 @@ export const SERVICES: ServiceInfo[] = [
     name: 'Water Damage Restoration',
     shortName: 'Water Damage Restoration',
     description:
-      'Complete water damage restoration for homes and businesses in Kent, WA — from initial assessment through final repairs.',
+      'Complete water damage restoration for homeowners and residential properties in Kent, WA — from initial assessment through final repairs.',
     longDescription:
       'Water damage can strike at any time, whether from a burst pipe, appliance failure, roof leak, or severe weather. Kent Pest Control Service provides comprehensive water damage restoration services to property owners throughout Kent and the surrounding Washington communities. Our restoration process addresses every phase of water damage — from water removal and structural drying to repairs and final restoration. We work to minimize further damage, reduce the risk of mold growth, and help return your property to its pre-loss condition.',
     image: 'https://images.pexels.com/photos/5317154/pexels-photo-5317154.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -79,7 +79,7 @@ export const SERVICES: ServiceInfo[] = [
       {
         title: 'Structural Drying',
         description:
-          'Industrial air movers and dehumidifiers are deployed to dry walls, floors, and building materials thoroughly, monitored daily until moisture targets are met.',
+          'Specialized air movers and dehumidifiers are deployed to dry walls, floors, and building materials thoroughly, monitored daily until moisture targets are met.',
       },
       {
         title: 'Cleaning & Sanitizing',
@@ -115,9 +115,9 @@ export const SERVICES: ServiceInfo[] = [
     description:
       'Rapid water removal and extraction services to clear standing water from your property and stop damage from spreading.',
     longDescription:
-      'When water invades your home or business, fast removal is critical. Kent Pest Control Service provides professional water removal services using industrial-grade extraction equipment designed to handle everything from small leaks to significant flooding. The goal is simple: remove standing water as quickly as possible to prevent it from soaking deeper into floors, walls, and furnishings. Our team serves property owners in Kent and nearby Washington communities.',
+      'When water invades your home or residential property, fast removal is critical. Kent Pest Control Service provides professional water removal services using high-capacity structural extraction equipment designed to handle everything from small plumbing leaks to significant residential flooding. The goal is simple: remove standing water as quickly as possible to prevent it from soaking deeper into floors, walls, and furnishings. Our team serves homeowners in Kent and nearby Washington communities.',
     image: 'https://images.pexels.com/photos/38325/vacuum-cleaner-carpet-cleaner-housework-housekeeping-38325.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-    imageAlt: 'Professional water extraction equipment removing water from a carpeted floor',
+    imageAlt: 'Professional water extraction equipment removing water from a residential carpeted floor',
     problems: [
       'Standing water from burst pipes or plumbing failures flooding rooms',
       'Appliance leaks spreading water across kitchens, laundry rooms, or basements',
@@ -168,7 +168,7 @@ export const SERVICES: ServiceInfo[] = [
     name: 'Water Extraction',
     shortName: 'Water Extraction',
     description:
-      'Professional water extraction services using industrial equipment to remove water from carpets, flooring, and building materials.',
+      'Professional water extraction services using specialized high-capacity equipment to remove water from carpets, flooring, and building materials.',
     longDescription:
       'Water extraction goes beyond simple water removal — it targets water that has been absorbed into carpets, padding, subfloors, and building materials. Kent Pest Control Service uses specialized extraction tools that pull water from deep within materials, not just the surface. This thorough extraction is essential before drying can be effective. We serve the Kent, WA area and surrounding communities.',
     image: 'https://images.pexels.com/photos/4030028/pexels-photo-4030028.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -223,11 +223,11 @@ export const SERVICES: ServiceInfo[] = [
     name: 'Structural Drying',
     shortName: 'Structural Drying',
     description:
-      'Professional structural drying using industrial dehumidifiers and air movers to remove moisture from walls, floors, and framing.',
+      'Professional structural drying using specialized high-capacity LGR dehumidifiers and air movers to remove moisture from residential walls, floors, and framing.',
     longDescription:
-      'Structural drying is the critical phase that follows water extraction. Even after visible water is removed, building materials like drywall, wood framing, insulation, and subfloors retain significant moisture. Kent Pest Control Service deploys commercial-grade dehumidifiers and high-velocity air movers to drive this moisture out of the structure. Daily monitoring ensures drying progresses properly until moisture content returns to acceptable levels, preventing mold growth and structural deterioration.',
+      'Structural drying is the critical phase that follows water extraction. Even after visible water is removed, building materials like drywall, wood framing, insulation, and subfloors retain significant moisture. Kent Pest Control Service deploys specialized high-capacity low-grain refrigerant (LGR) dehumidifiers and high-velocity air movers to drive this moisture out of the structure. Daily monitoring ensures drying progresses properly until moisture content returns to acceptable levels, preventing mold growth and structural deterioration.',
     image: 'https://images.pexels.com/photos/4030033/pexels-photo-4030033.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-    imageAlt: 'Industrial drying equipment set up in a room with carpet flooring and ceiling fan',
+    imageAlt: 'Specialized structural drying equipment set up in a residential living space',
     problems: [
       'Moisture trapped inside wall cavities after water extraction is complete',
       'Wet wood framing and subflooring that can warp, swell, or rot',
@@ -264,7 +264,7 @@ export const SERVICES: ServiceInfo[] = [
       },
       {
         q: 'Why can\'t I just open windows and use fans to dry my home?',
-        a: 'Household fans and open windows cannot match the drying power of commercial dehumidifiers and air movers. More importantly, without moisture monitoring, you cannot know whether hidden moisture remains inside walls or under floors. Incomplete drying leads to mold growth and structural damage that may not appear until weeks later.',
+        a: 'Household fans and open windows cannot match the drying power of professional LGR dehumidifiers and air movers. More importantly, without moisture monitoring, you cannot know whether hidden moisture remains inside walls or under floors. Incomplete drying leads to mold growth and structural damage that may not appear until weeks later.',
       },
       {
         q: 'What happens if structural drying is not done properly?',
@@ -430,7 +430,7 @@ export const SERVICES: ServiceInfo[] = [
       {
         title: 'Dehumidification & Structural Drying',
         description:
-          'Industrial dehumidifiers and air movers run continuously with moisture meter tracking to restore safe moisture levels throughout the structure.',
+          'High-capacity LGR dehumidifiers and air movers run continuously with moisture meter tracking to restore safe moisture levels throughout the structure.',
       },
     ],
     faqs: [
@@ -486,7 +486,7 @@ export const SERVICES: ServiceInfo[] = [
       {
         title: 'Specialized Concrete & Structural Drying',
         description:
-          'Industrial low-grain refrigerant (LGR) dehumidifiers and high-velocity air movers draw moisture out of dense concrete pores and wood framing.',
+          'Specialized high-capacity low-grain refrigerant (LGR) dehumidifiers and high-velocity air movers draw moisture out of dense concrete pores and wood framing.',
       },
       {
         title: 'Antimicrobial Protection & Odor Control',
@@ -501,11 +501,11 @@ export const SERVICES: ServiceInfo[] = [
       },
       {
         q: 'Why do basements take longer to dry than upper levels?',
-        a: 'Basements have limited natural ventilation, high ambient humidity, and are built with concrete, which retains moisture deep within its pores. Specialized high-capacity commercial dehumidifiers are required to pull moisture out thoroughly.',
+        a: 'Basements have limited natural ventilation, high ambient humidity, and are built with concrete, which retains moisture deep within its pores. Specialized high-capacity LGR structural dehumidifiers are required to pull moisture out thoroughly.',
       },
       {
         q: 'Will my flooded basement develop mold?',
-        a: 'Mold can begin forming within 24 to 48 hours of water intrusion. Fast extraction and aggressive commercial drying keep moisture levels below the threshold where mold spores can germinate.',
+        a: 'Mold can begin forming within 24 to 48 hours of water intrusion. Fast extraction and aggressive structural drying keep moisture levels below the threshold where mold spores can germinate.',
       },
     ],
     relatedServiceSlugs: ['water-damage-restoration', 'water-extraction', 'structural-drying', 'flood-damage-cleanup'],
@@ -572,62 +572,62 @@ export const SERVICES: ServiceInfo[] = [
     relatedServiceSlugs: ['water-damage-restoration', 'water-removal', 'water-damage-repair', 'structural-drying'],
   },
   {
-    slug: 'commercial-water-damage',
-    name: 'Commercial Water Damage Restoration',
-    shortName: 'Commercial Restoration',
+    slug: 'residential-water-mitigation',
+    name: 'Residential Water Mitigation',
+    shortName: 'Residential Mitigation',
     description:
-      'Large-scale commercial water extraction and drying to minimize downtime for businesses in Kent, WA.',
+      'Targeted emergency residential water extraction, moisture mitigation, and structural drying for single-family homes and residential properties in Kent, WA.',
     longDescription:
-      'Water emergencies in commercial properties disrupt daily operations, damage valuable inventory, and create safety concerns for tenants and employees. Kent Pest Control Service delivers rapid, professional commercial water damage restoration tailored for businesses, industrial warehouses, offices, and retail facilities in Kent, WA and the surrounding Puget Sound corridor. We work around the clock to contain damage, dry large open spaces, and get your business operational.',
-    image: 'https://images.pexels.com/photos/4481534/pexels-photo-4481534.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-    imageAlt: 'Commercial warehouse and industrial facility undergoing commercial water damage restoration',
+      'Water emergencies in residential homes disrupt daily family life, risk structural integrity, and create health concerns from potential mold. Kent Pest Control Service delivers rapid, professional residential water mitigation tailored specifically for homeowners, single-family homes, townhouses, and private properties in Kent, WA and the surrounding King County corridor. We work to contain water spread, dry structural framework, protect furnishings, and restore your home.',
+    image: 'https://images.pexels.com/photos/5524265/pexels-photo-5524265.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+    imageAlt: 'Residential home undergoing emergency structural water mitigation and drying',
     problems: [
-      'Commercial fire sprinkler system malfunctions or pipe breaks discharging thousands of gallons',
-      'Roof failure or HVAC condensation line overflows impacting retail and office areas',
-      'Multi-story commercial plumbing line leaks affecting multiple corporate tenant suites',
-      'Flooding across large warehouse, showroom, or distribution center concrete floors',
-      'Potential damage to sensitive electronic equipment, office documents, and commercial inventory',
-      'Revenue and operational losses caused by mandatory business downtime during water emergencies',
+      'Sudden water heater failure or supply line bursts flooding residential living areas',
+      'Roof runoff or gutter overflows penetrating residential ceilings and attic insulation',
+      'Multi-level residential plumbing leaks affecting upstairs bathrooms and lower-level ceilings',
+      'Flooding across residential crawl spaces, basements, or hardwood flooring',
+      'Damage to residential drywall, baseboards, carpeting, and family personal property',
+      'Threat of rapid microbial mold growth in damp residential building cavities',
     ],
     process: [
       {
-        title: 'Commercial Assessment & Containment',
+        title: 'Residential Assessment & Thermal Mapping',
         description:
-          'We assess facility impact, establish containment zones to protect unaffected business areas, and prioritize critical assets.',
+          'We assess the home, map structural moisture boundaries with non-invasive sensors, and prioritize family living spaces.',
       },
       {
-        title: 'High-Volume Extraction',
+        title: 'High-Volume Water Extraction',
         description:
-          'Industrial trailer-mounted and high-capacity extractors rapidly clear massive square footage of standing water.',
+          'Specialized extractors rapidly clear standing water from residential carpets, tile, and hardwood floors.',
       },
       {
-        title: 'Asset & Inventory Protection',
+        title: 'Personal Property & Furnishing Protection',
         description:
-          'We protect office equipment, industrial machinery, and merchandise using containment barriers and climate stabilization.',
+          'We elevate furniture, place protective moisture blocks, and protect household belongings.',
       },
       {
-        title: 'Large-Scale Structural Drying',
+        title: 'Structural Drying & Dehumidification',
         description:
-          'Industrial desiccant and high-capacity LGR dehumidifiers dry commercial structures, concrete slabs, and subfloors efficiently.',
+          'High-capacity low-grain refrigerant (LGR) dehumidifiers dry residential drywall, wall studs, and subfloors efficiently.',
       },
       {
-        title: 'Sanitization & Re-occupancy Clearance',
+        title: 'Sanitization & Moisture Clearance',
         description:
-          'All affected surfaces are disinfected and tested to verify dry standards and air quality before employees and customers return.',
+          'All affected home surfaces receive EPA-registered botanical antimicrobial treatments, followed by final moisture verification.',
       },
     ],
     faqs: [
       {
-        q: 'Can our business remain open during commercial water restoration?',
-        a: 'In many situations, yes. We utilize containment barriers and negative air scrubbers to isolate damaged areas, allowing your business to maintain operations safely in unaffected areas.',
+        q: 'Can my family stay in the home during residential water restoration?',
+        a: 'In many situations, yes. We utilize containment barriers and negative air scrubbers to isolate affected rooms, allowing your household to safely occupy unaffected living areas.',
       },
       {
-        q: 'Do you service large industrial facilities in the Kent Valley?',
-        a: 'Yes. Kent has major warehouse, logistics, and manufacturing hubs. Our commercial equipment is specifically scaled to handle large-scale water extraction and drying across extensive square footage.',
+        q: 'Do you service single-family homes and townhomes in King County?',
+        a: 'Yes. We specialize exclusively in residential properties, single-family homes, and townhouses throughout Kent and surrounding King County communities.',
       },
       {
-        q: 'How fast can you mobilize for a commercial water emergency?',
-        a: 'We understand that commercial downtime directly costs money. Call (253) 523-3921 right away to speak with our team and deploy emergency commercial restoration equipment.',
+        q: 'How fast can you mobilize for a residential water emergency?',
+        a: 'Immediate response is crucial to prevent secondary water damage to your home. Call (253) 523-3921 right away to speak with our intake team and request emergency residential dispatch.',
       },
     ],
     relatedServiceSlugs: ['water-damage-restoration', 'water-removal', 'structural-drying', 'flood-damage-cleanup'],
@@ -641,7 +641,7 @@ export const SERVICE_AREAS: ServiceAreaInfo[] = [
     name: 'Kent, WA',
     shortName: 'Kent',
     description:
-      'As a Kent-based business, we provide water damage restoration services directly to homes and businesses throughout the city of Kent, Washington.',
+      'As a Kent-based restoration service, we provide water damage restoration services directly to homeowners and residential properties throughout the city of Kent, Washington.',
     geo: { lat: 47.3788, lng: -122.2391 },
   },
   {
@@ -659,7 +659,7 @@ export const SERVICE_AREAS: ServiceAreaInfo[] = [
     name: 'Auburn, WA',
     shortName: 'Auburn',
     description:
-      'Our water damage restoration services are available to homes and businesses in Auburn, WA, located just south of Kent.',
+      'Our water damage restoration services are available to homeowners and residential properties in Auburn, WA, located just south of Kent.',
     geo: { lat: 47.3073, lng: -122.2285 },
   },
   {
@@ -668,7 +668,7 @@ export const SERVICE_AREAS: ServiceAreaInfo[] = [
     name: 'Covington, WA',
     shortName: 'Covington',
     description:
-      'Covington, WA residents and businesses can access our water damage restoration services for their property restoration needs.',
+      'Covington, WA residents and homeowners can access our water damage restoration services for their property restoration needs.',
     geo: { lat: 47.3612, lng: -122.1062 },
   },
   {
@@ -695,7 +695,7 @@ export const SERVICE_AREAS: ServiceAreaInfo[] = [
     name: 'SeaTac, WA',
     shortName: 'SeaTac',
     description:
-      'Our water damage restoration services extend to homes and businesses in SeaTac, WA, serving the community near Seattle-Tacoma International Airport.',
+      'Our water damage restoration services extend to homeowners and residential properties in SeaTac, WA, serving the community near Seattle-Tacoma International Airport.',
     geo: { lat: 47.4438, lng: -122.2954 },
   },
   {
@@ -704,7 +704,7 @@ export const SERVICE_AREAS: ServiceAreaInfo[] = [
     name: 'Des Moines, WA',
     shortName: 'Des Moines',
     description:
-      'Des Moines, WA residents and businesses can access our water damage restoration services along the Puget Sound waterfront.',
+      'Des Moines, WA residents and homeowners can access our water damage restoration services along the Puget Sound waterfront.',
     geo: { lat: 47.4018, lng: -122.3243 },
   },
   {

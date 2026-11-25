@@ -161,8 +161,8 @@ export function AboutPage({ navigate }: AboutPageProps) {
                 </p>
                 <p>
                   Water removal and extraction come first, using professional equipment to clear standing water
-                  and pull moisture from building materials. Structural drying follows, with industrial
-                  dehumidifiers and air movers running until moisture levels return to safe targets.
+                  and pull moisture from building materials. Structural drying follows, with specialized LGR
+                  structural dehumidifiers and air movers running until moisture levels return to safe targets.
                 </p>
                 <p>
                   Finally, we handle repairs — replacing damaged drywall, flooring, and structural elements to
@@ -176,7 +176,7 @@ export function AboutPage({ navigate }: AboutPageProps) {
               {[
                 { icon: Wrench, title: 'Assessment', text: 'Full inspection of damage extent, water source, and affected materials.' },
                 { icon: Droplets, title: 'Water Removal', text: 'Professional extraction of standing water and absorbed moisture.' },
-                { icon: Wind, title: 'Structural Drying', text: 'Industrial dehumidifiers and air movers with daily moisture monitoring.' },
+                { icon: Wind, title: 'Structural Drying', text: 'Specialized LGR dehumidifiers and air movers with daily moisture monitoring.' },
                 { icon: Hammer, title: 'Repairs', text: 'Drywall, flooring, and structural repairs to restore your property.' },
               ].map((step, index) => {
                 const Icon = step.icon;

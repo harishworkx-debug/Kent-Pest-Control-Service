@@ -244,7 +244,7 @@ export const LANDING_DATA = {
     },
     {
       q: 'How long does the structural drying and dehumidification process take for a home?',
-      a: 'On average, professional residential structural drying requires 3 to 5 days of continuous industrial dehumidification and air movement. Daily moisture readings track the drying curve of structural framing, drywall, and subfloors until dry equilibrium standards are achieved.',
+      a: 'On average, professional residential structural drying requires 3 to 5 days of continuous specialized LGR structural dehumidification and air movement. Daily moisture readings track the drying curve of structural framing, drywall, and subfloors until dry equilibrium standards are achieved.',
     },
     {
       q: 'What are the most frequent causes of residential water damage in the Kent area?',

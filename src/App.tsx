@@ -30,6 +30,13 @@ function App() {
 
   // Redirect legacy /services/{service-slug} URLs and legacy URLs without -wa to /{service-slug}-{area-slug}
   useEffect(() => {
+    // 301-style redirect for any commercial legacy paths to residential mitigation
+    if (path.includes('commercial-water-damage')) {
+      const redirectPath = path.replace('commercial-water-damage', 'residential-water-mitigation');
+      navigate(redirectPath, true);
+      return;
+    }
+
     if (path.startsWith('/services/')) {
       const serviceSlug = path.replace('/services/', '');
       const service = getService(serviceSlug);
@@ -57,7 +64,12 @@ function App() {
   // Standalone Landing Page Switcher Logic
   const isStandaloneLanding =
     path === '/home-page' ||
-    (USE_LANDING_PAGE_AS_HOME && (path === '/' || path === '/water-damage-restoration-kent-wa'));
+    (USE_LANDING_PAGE_AS_HOME &&
+      (path === '/' ||
+       path === '' ||
+       path === '/index.html' ||
+       path === '/home' ||
+       path === '/water-damage-restoration-kent-wa'));
 
   if (isStandaloneLanding) {
     return <StandaloneLandingPage navigate={navigate} currentPath={path} />;

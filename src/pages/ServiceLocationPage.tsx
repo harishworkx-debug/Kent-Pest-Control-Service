@@ -94,7 +94,7 @@ export function ServiceLocationPage({ serviceSlug, areaSlug, navigate }: Service
               <div className="mt-6 space-y-4 text-base leading-relaxed text-neutral-600 text-pretty">
                 <p>
                   {service.longDescription.split('.')[0]}. In {area.name}, we provide {service.name.toLowerCase()}{' '}
-                  services to {isPrimaryArea ? 'homes and businesses throughout the Kent community' : `properties in the ${area.shortName} area`}.
+                  services to {isPrimaryArea ? 'homeowners and residential properties throughout the Kent community' : `properties in the ${area.shortName} area`}.
                 </p>
                 <p>
                   {area.description} Whether you are dealing with a burst pipe, appliance leak, storm damage,
